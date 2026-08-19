@@ -4,11 +4,11 @@
   "private": true,
   "description": "Your agents, working 24/7 — a free, local-first multi-agent harness that turns the CLI coding agent you already run into a clone of you, coordinating an office of agents on your machine.",
   "main": "out/main/index.js",
-  "author": "You",
-  "homepage": "https://example.com/",
+  "author": "Talha4219",
+  "homepage": "https://github.com/Talha4219/kven-assistant",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-github-user/kven.git"
+    "url": "https://github.com/Talha4219/kven-assistant.git"
   },
   "scripts": {
     "dev": "electron-vite dev",

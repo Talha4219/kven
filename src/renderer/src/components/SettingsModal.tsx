@@ -234,7 +234,7 @@ export function SettingsModal({ config, onClose, initialSection }: SettingsModal
   };
 
   // --- circuit-breaker config (Lane A #6 canonical fields, widened view) ---
-  // Drives Jim's real breaker: floor-wide TOKEN budget (costCapTokens) + output-
+  // Drives Reyyan's real breaker: floor-wide TOKEN budget (costCapTokens) + output-
   // token velocity ceiling (circuitBreaker.tokenVelocityPerMin). The token cap
   // replaced the old dollar cap as the user-facing budget.
   type BreakerCfgView = HarnessConfig & {

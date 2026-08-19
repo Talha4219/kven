@@ -1024,7 +1024,7 @@ export function useHive(config: HarnessConfig | null): void {
     return () => { off?.(); offLegacy?.(); };
   }, [config?.onboardingComplete]);
 
-  // 7) Auto-revive wedged PTYs after the Mac sleeps/locks. Kevin's main-process
+  // 7) Auto-revive wedged PTYs after the Mac sleeps/locks. Choto's main-process
   //    keepalive catches up its schedules on wake and DETECTS terminals that were
   //    live before sleep but went silent after resume — it reports those ids on
   //    `power:resume`. We respawn EXACTLY those, resuming each agent's prior CLI

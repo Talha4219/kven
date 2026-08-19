@@ -14,7 +14,7 @@
  * (groqApiKey, slack/webhook tokens); we surface a hand-picked, non-sensitive
  * allowlist only.
  *
- * INTEGRATION (rt-2's src/renderer/src/realtime/session.ts — Jim's file):
+ * INTEGRATION (rt-2's src/renderer/src/realtime/session.ts — Reyyan's file):
  *   import { realtimeReadTools, realtimeSessionSummary } from './tools';
  *   ...
  *   tools: realtimeReadTools()            // swap for placeholderTools() at the `tools:` field

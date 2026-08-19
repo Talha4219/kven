@@ -241,7 +241,7 @@ const telemetry = new TelemetryCollector({
   emit: (channel, payload) => { try { liveWebContents()?.send(channel, payload); } catch { /* window tore down */ } },
   resolveCwd: (agentId) => hive.registry().agents[agentId]?.cwd ?? null
 });
-// Usage provider (Seam 1) — the INTEGRATION swap: Oscar's telemetry collector (#7)
+// Usage provider (Seam 1) — the INTEGRATION swap: Baran's telemetry collector (#7)
 // IS the provider, replacing Lane A's interim StubUsageProvider. Same
 // getAgentUsage(agentId) pull seam, so the breaker + cost ledger consumers are
 // untouched; telemetry has a transcript fallback built in, so it works before any
@@ -259,11 +259,11 @@ const breaker = new CircuitBreaker(() => {
 // heartbeat mission is disabled (it ships off).
 let fleetTimer: ReturnType<typeof setInterval> | null = null;
 let breakerBeatTimer: ReturnType<typeof setInterval> | null = null;
-// Feed the breaker's api_error-storm trip from Oscar's OTel api_error spans —
-// Jim's one breaker input with no on-branch source (telemetry.onApiError seam).
+// Feed the breaker's api_error-storm trip from Baran's OTel api_error spans —
+// Reyyan's one breaker input with no on-branch source (telemetry.onApiError seam).
 telemetry.onApiError((agentId) => breaker.recordError(agentId));
-// HookServer needs BOTH: Oscar's control registry (HITL pause/gate/steer/halt via
-// hook returns) AND Jim's breaker (feed recordToolUse on each PostToolUse).
+// HookServer needs BOTH: Baran's control registry (HITL pause/gate/steer/halt via
+// hook returns) AND Reyyan's breaker (feed recordToolUse on each PostToolUse).
 const hookServer = new HookServer(hive, () => liveWebContents(), () => readConfig(), control, breaker);
 const memory = new MemoryManager(
   () => readConfig().harnessHome,
@@ -619,7 +619,7 @@ function syncMissions(): void {
         // no dispatch body/target, so skip the hive.send and just fire auto-compact.
         // Gate on `kind!=='compact'` ALONE — that already excludes the compact mission;
         // we deliberately do NOT add `&& m.body`, so other (dispatch) missions keep
-        // their prior behaviour, including the historical empty-body send (Pam N1).
+        // their prior behaviour, including the historical empty-body send (Ates N1).
         if (m.kind !== 'compact' && hive.enabled()) {
           hive.send({ to: m.to, act: 'request', subject: m.label, body: m.body }, 'scheduler');
         }
@@ -776,7 +776,7 @@ function syncContextTriggers(): void {
  *  but has NO live PTY. This runs in bootstrapHiveServices, BEFORE the renderer can
  *  respawn anything, so at this point NO agent owns a PTY — every `archived:false`
  *  entry is therefore a stale carry-over from a prior session that quit/crashed
- *  WITHOUT archiving (e.g. the pre-acc13a3 'assistant' Dwight entry). Left as-is
+ *  WITHOUT archiving (e.g. the pre-acc13a3 'assistant' Emir entry). Left as-is
  *  they have no live PTY, so the breaker beat steers them and the steer bounces to
  *  GOD as a requires_reply GOD can't clear → inbox flood.
  *
@@ -1045,7 +1045,7 @@ function runBreakerBeat(progressWindowMs: number): void {
     if (a.archived) continue;
     // #57/#58: skip assistant + orphaned shells. The breaker must only evaluate
     // live, real agents. An assistant entry (e.g. the pre-acc13a3 headless
-    // 'Dwight') or any orphaned entry left archived:false with NO live PTY would
+    // 'Emir') or any orphaned entry left archived:false with NO live PTY would
     // otherwise be steered, and that steer bounces to GOD as a requires_reply GOD
     // can't clear → inbox flood. ptyForAgent(id) === undefined means no live PTY.
     // God is exempt from this orphan check (it keeps its own flow + the godId skip
@@ -1255,7 +1255,7 @@ function slackReplyScriptPath(): string {
 
 /** W3 — the bundled read-only `skills/` source dir copied into each agent's
  *  `.claude/skills/` at spawn. Same packaged/dev resolution as the helpers above.
- *  Tolerated-missing until lp-manifest (Kevin) populates it (the hive copy is a
+ *  Tolerated-missing until lp-manifest (Choto) populates it (the hive copy is a
  *  no-op on an absent dir). */
 function skillsResourceDir(): string {
   return app.isPackaged
@@ -2700,11 +2700,11 @@ async function spawnAgentCore(opts: AgentSpawnOptions, owner: Electron.WebConten
   // OpenCode / Crush / pi / qwen read BYOK API keys from standard env vars and, for
   // the local-LLM path, a per-provider base URL. Keys are write-only in the broker
   // (read MAIN-ONLY here, never logged); base URLs ride HarnessConfig. Claude/codex
-  // use their own login, so they skip this. Pam guardrails #3/#4/#5.
+  // use their own login, so they skip this. Ates guardrails #3/#4/#5.
   if (opts.hive && (provider === 'opencode' || provider === 'crush' || provider === 'pi' || provider === 'qwen')) {
     const cfg = readConfig();
     const extra: Record<string, string> = {};
-    // 1) BYOK keys — LEAST-PRIVILEGE (Pam/Jim NIT-2): inject ONLY the key for the
+    // 1) BYOK keys — LEAST-PRIVILEGE (Ates/Reyyan NIT-2): inject ONLY the key for the
     //    spawned model's provider prefix when we can identify it; fall back to all
     //    stored keys when the model/prefix is unknown (default model, qwen slugs,
     //    custom). Reduces the blast radius vs handing every CLI all keys.
@@ -2721,7 +2721,7 @@ async function spawnAgentCore(opts: AgentSpawnOptions, owner: Electron.WebConten
       if (!key) continue;
       extra[BACKEND_KEY_ENV[backend]] = key;
       // OpenCode/AI-SDK's Google provider reads GOOGLE_GENERATIVE_AI_API_KEY, not
-      // GEMINI_API_KEY — inject both so google/* authenticates (Jim NIT #1).
+      // GEMINI_API_KEY — inject both so google/* authenticates (Reyyan NIT #1).
       if (backend === 'google') extra.GOOGLE_GENERATIVE_AI_API_KEY = key;
     }
     // 2) Floor auto-state for pi's bundled extension auto-allow (guardrail #5): it
@@ -2737,7 +2737,7 @@ async function spawnAgentCore(opts: AgentSpawnOptions, owner: Electron.WebConten
         // Register the model id the user actually selects (the part after 'local/')
         // so `--model local/<id>` resolves; default to 'local'. Without this the
         // dropdown's `local/llama3` failed against a config that only declared model
-        // 'local' (Jim verify-opencode MUST-FIX #2).
+        // 'local' (Reyyan verify-opencode MUST-FIX #2).
         const localModel = (prefix === 'local' && modelSlug.slice(6)) || 'local';
         oc.provider = {
           local: { npm: '@ai-sdk/openai-compatible', name: 'Local (self-hosted)', options: { baseURL: baseUrl }, models: { [localModel]: { name: localModel } } }
@@ -2847,7 +2847,7 @@ ipcMain.handle('terminal:openAtFolder', async (_evt, cwd: unknown) => {
   });
 });
 
-// ─── IPC: integrations (Phase 2 registry — backend for Ryan's Settings UI) ────
+// ─── IPC: integrations (Phase 2 registry — backend for Cemal's Settings UI) ────
 // Records are metadata only (config-backed); secrets are encrypted at rest and NEVER
 // returned over IPC. `list` redacts secretRef to a `hasSecret` boolean.
 ipcMain.handle('integrations:list', () => integrations.listRecordsRedacted());
@@ -3579,7 +3579,7 @@ ipcMain.handle('telemetry:snapshot', () => telemetry.snapshot());
 // Lane A's breaker calls this with a BreakerState; we fan it out to the renderer
 // on `control:breakerState`, where the avatar adapter gives it precedence over
 // hook-derived status (#5C looping/zombie). Defined here so the channel exists
-// before Jim's policy lands; he produces, this lane consumes.
+// before Reyyan's policy lands; he produces, this lane consumes.
 ipcMain.handle('control:setBreakerState', (_evt, state: unknown) => {
   try { liveWebContents()?.send('control:breakerState', state); } catch { /* window tore down */ }
   return { ok: true };
@@ -4045,7 +4045,7 @@ registerRealtimeIpc();
 // aria-voice attribution — lives in ./realtimeActions. This site only injects
 // the existing functions; it adds NO new orchestration logic.
 // ─── IPC: Realtime Aria completion watcher (rt-12, Phase 2) ───────────────
-// Jim's net-new engine (realtimeCompletionWatcher.ts) detects a voice-dispatched
+// Reyyan's net-new engine (realtimeCompletionWatcher.ts) detects a voice-dispatched
 // task finishing (card→done OR a done-reply in aria-voice's inbox) and EMITS it;
 // I own the seam — inject the hive read deps, push completions to the live session
 // (so Aria speaks them unprompted), and bridge waitFor / queue-drain over IPC.
@@ -4718,7 +4718,7 @@ function onSystemResume(reason: string): void {
 }
 
 app.whenReady().then(() => {
-  // Realtime Aria mic-gate hygiene (rt-8 / Pam rt-10 nit): the voice session
+  // Realtime Aria mic-gate hygiene (rt-8 / Ates rt-10 nit): the voice session
   // opens the mic permission gate by persisting realtimeVoiceEnabled=true and
   // closes it on disconnect — but a hard crash/reload mid-session skips that
   // teardown, leaving the flag stuck true so the gate would boot PRE-OPEN with no

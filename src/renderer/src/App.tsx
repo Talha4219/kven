@@ -242,7 +242,7 @@ export function App() {
       width: '100vw', height: '100vh',
       overflow: 'hidden'
     }}>
-      {/* rt-12: global fixed-overlay toast for voice-Aria completions ("Oscar
+      {/* rt-12: global fixed-overlay toast for voice-Aria completions ("Baran
           finished X"). Self-positions bottom-right; renders null until one arrives. */}
       <CompletionToast />
       {/* v0.3.4: background-update toast ("restart to update"); renders null until

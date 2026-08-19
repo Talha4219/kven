@@ -252,7 +252,7 @@ export const CRUSH_MODELS: ModelOption[] = [
   { id: 'openrouter/auto', label: 'OpenRouter (auto)' },
   // OpenAI-wire local slug so traffic routes through the proxy (the harness overrides
   // the `openai` provider's base_url → loopback → your configured Crush base-URL).
-  // An `ollama/*` slug would bypass the proxy (Dwight verify-crush NIT-2).
+  // An `ollama/*` slug would bypass the proxy (Emir verify-crush NIT-2).
   { id: 'openai/local', label: 'Local · OpenAI-compatible (set base-URL)' }
 ];
 

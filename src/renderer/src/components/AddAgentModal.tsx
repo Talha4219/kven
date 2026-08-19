@@ -86,7 +86,7 @@ Return EXACTLY this shape (omit optional fields you don't need; keep the spec st
 
 {
   "spec": "kven/hire@1",
-  "name": "Jim",
+  "name": "Reyyan",
   "description": "one-line role — what this agent is for",
   "goal": "standing directive injected on every prompt — specific and outcome-oriented",
   "provider": "claude",
@@ -161,7 +161,7 @@ export function AddAgentModal({ onClose, config, onConfigChange }: AddAgentModal
   const initialProvider = inferAgentProvider(config.defaultCommand);
   const initialModel = isClaudeProvider(initialProvider) ? config.defaultModel : undefined;
 
-  const [name, setName] = useState(pendingHire?.name ?? 'Jim');
+  const [name, setName] = useState(pendingHire?.name ?? 'Reyyan');
   const [character, setCharacter] = useState<OfficeCharacterName>(knownCharacter(pendingHire?.character));
   const [accent, setAccent] = useState<AccentColorName>(knownAccent(pendingHire?.accent));
   const [cwd, setCwd] = useState<string>(config.registeredRepos[0] ?? '');
@@ -192,7 +192,7 @@ export function AddAgentModal({ onClose, config, onConfigChange }: AddAgentModal
     setProvider(id);
     // Seed the model: Claude from the global defaultModel; other engines from the
     // per-engine default set in Settings → AI Engines (providerDefaultModels), else
-    // the CLI default. This is what makes that Settings field live (Dwight NIT-1).
+    // the CLI default. This is what makes that Settings field live (Emir NIT-1).
     const nextModel = isClaudeProvider(id) ? config.defaultModel : config.providerDefaultModels?.[id];
     setModel(nextModel);
     const nextPreset = providerPreset(id);

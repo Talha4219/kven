@@ -324,7 +324,7 @@ export const AGENT_PROVIDER_PRESETS: AgentProviderPreset[] = [
     commandGroups: [],
     // OpenCode's TUI exposes no skip-permissions FLAG; headless auto-approve is a
     // config concern (permission:allow). To keep auto-mode gated behind the floor
-    // `config.autoMode` toggle (Pam guardrail #2), the permission JSON is NOT a
+    // `config.autoMode` toggle (Ates guardrail #2), the permission JSON is NOT a
     // static nonInteractiveEnv — spawnAgentCore builds OPENCODE_CONFIG_CONTENT
     // dynamically (permission:allow only when autoMode is on; + a local provider
     // block when a base-URL is set). So no auto flag is spliced onto the command.
@@ -410,7 +410,7 @@ export const AGENT_PROVIDER_PRESETS: AgentProviderPreset[] = [
     bridge: { kind: 'proxy', api: 'openai', baseUrlEnv: 'CRUSH_PROXY_BASE_URL', inboxDelivery: 'terminal' },
     // OpenAI-WIRE default so the out-of-box Crush god routes through the proxy
     // cleanly (the proxy serves one wire-shape; an anthropic/* default would route to
-    // the wrong upstream — Dwight verify-crush MF1). Advisory/editable; non-OpenAI-wire
+    // the wrong upstream — Emir verify-crush MF1). Advisory/editable; non-OpenAI-wire
     // Crush-via-proxy is on-device live-verify. // exact long-context id humanQA
     recommendedOrchestratorModel: 'openai/gpt-4o',
     // god-eligible via the proxy bridge (terminal inbox delivery on synthesized idle).
@@ -441,7 +441,7 @@ export const AGENT_PROVIDER_PRESETS: AgentProviderPreset[] = [
     // pi has NO yolo flag. `--approve` is per-run PROJECT trust (accept the cwd so pi
     // doesn't prompt to trust the folder); the actual tool auto-allow lives INSIDE the
     // bridge extension's tool_call handler, which respects the floor auto-state via
-    // HIVE_AUTO_APPROVE env (Pam guardrail #5). Gated by config.autoMode like the rest.
+    // HIVE_AUTO_APPROVE env (Ates guardrail #5). Gated by config.autoMode like the rest.
     autoModeFlag: '--approve',
     autoFlag: '--approve',
     // Suppress first-run version-check / telemetry chatter in the PTY. // humanQA exact names

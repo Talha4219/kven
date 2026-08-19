@@ -8,11 +8,11 @@
  *
  * We drive a CUSTOM `OpenAIRealtimeWebRTC` transport (not the bare `'webrtc'` string)
  * so we can: (a) open the mic ourselves with echo-cancellation + noise-suppression +
- * auto-gain (and honor the device the user picked — Oscar's rt-8 seam), and (b) own
+ * auto-gain (and honor the device the user picked — Baran's rt-8 seam), and (b) own
  * the <audio> sink for playback. Turn-taking uses semantic VAD with barge-in (the
  * model truncates when the user talks over it).
  *
- * Phase 1 is a read-only connect→listen→respond round-trip. The agent runs Kevin's
+ * Phase 1 is a read-only connect→listen→respond round-trip. The agent runs Choto's
  * rt-4 READ-ONLY tools (get_fleet_status / get_tasks / get_cost / get_triggers /
  * get_config / get_memory / get_activity) and god's rt-6 "Aria" persona, so the
  * agent_tool_start/agent_tool_end lifecycle fires and the mic goes idle during a tool
@@ -49,9 +49,9 @@ export interface RealtimeAriaState {
   model: string | null;
   /** Unix-seconds expiry of the ephemeral token, if main reported one. */
   expiresAt: number | null;
-  /** Selected input device (Oscar's device picker, rt-8). null = system default. */
+  /** Selected input device (Baran's device picker, rt-8). null = system default. */
   deviceId: string | null;
-  /** Selected output/speaker device (Oscar's speaker picker, rt-8). null = system default. */
+  /** Selected output/speaker device (Baran's speaker picker, rt-8). null = system default. */
   outputDeviceId: string | null;
 }
 
@@ -142,10 +142,10 @@ const COST_GUARD_TICK_MS = 10_000;
 
 /** N3-seam (rt-10 hardening): a completion summary carries dispatch objective text.
  *  It CANNOT escalate — MAIN independently gates every destructive/forbidden op
- *  (Pam confirmed) — but neutralize it before injecting into the model as a system
+ *  (Ates confirmed) — but neutralize it before injecting into the model as a system
  *  notification (defense in depth): collapse newlines, strip the parens that frame
  *  my notification, drop role markers + classic prompt-injection lead-ins, and cap
- *  length. Jim does the matching watcher-side half on the summary it emits. */
+ *  length. Reyyan does the matching watcher-side half on the summary it emits. */
 function sanitizeForVoice(s: string): string {
   return (s || '')
     .replace(/[\r\n]+/g, ' ')
@@ -213,7 +213,7 @@ function wire(s: RealtimeSession): void {
   });
 
   // rt-9 cost meter: each completed response reports token usage on the raw transport
-  // `response.done` event. Hand it straight to Oscar's cost store (its normalizer
+  // `response.done` event. Hand it straight to Baran's cost store (its normalizer
   // tolerates camel/snake-case + missing fields). Best-effort — never break the loop.
   s.on('transport_event', (event) => {
     try {
@@ -261,7 +261,7 @@ function micFriendly(msg: string): string {
 }
 
 /**
- * Open/close the main-process mic permission gate for the realtime session (Oscar's
+ * Open/close the main-process mic permission gate for the realtime session (Baran's
  * rt-8 gate, src/main/index.ts). That gate grants getUserMedia only while
  * `freeflowEnabled || realtimeVoiceEnabled` is true, and the check is SYNCHRONOUS — so
  * we must flip `realtimeVoiceEnabled` true and let it settle BEFORE opening the mic, then
@@ -278,7 +278,7 @@ async function setMicGate(on: boolean): Promise<void> {
 }
 
 /**
- * Apply the chosen output device to our <audio> sink (Oscar's speaker picker, rt-8).
+ * Apply the chosen output device to our <audio> sink (Baran's speaker picker, rt-8).
  * `setSinkId` is Chromium/Electron-only and not in every lib.dom, so we feature-detect +
  * cast narrowly. Best-effort: if the device is gone or unsupported we stay on the default
  * sink (passing '' selects the system default).
@@ -309,13 +309,13 @@ export async function connect(): Promise<void> {
       return;
     }
 
-    // Open the main-process mic gate BEFORE getUserMedia. Oscar's rt-8 permission check
+    // Open the main-process mic gate BEFORE getUserMedia. Baran's rt-8 permission check
     // is synchronous, so `realtimeVoiceEnabled` must already be true when the mic opens;
     // we close it again on teardown/error.
     await setMicGate(true);
 
     // Mic with echo-cancellation + noise-suppression + auto-gain, honoring the device
-    // the user picked (Oscar's rt-8 picker). getUserMedia surfaces permission denials.
+    // the user picked (Baran's rt-8 picker). getUserMedia surfaces permission denials.
     const audioConstraints: MediaTrackConstraints = {
       echoCancellation: true,
       noiseSuppression: true,
@@ -498,13 +498,13 @@ export function disconnect(reason: string = 'user'): void {
   setState({ status: 'off', muted: false });
 }
 
-/** Select the microphone (Oscar's device picker, rt-8). Applied on the next connect(). */
+/** Select the microphone (Baran's device picker, rt-8). Applied on the next connect(). */
 export function setDeviceId(deviceId: string | null): void {
   setState({ deviceId });
 }
 
 /**
- * Select the speaker/output device (Oscar's speaker picker, rt-8). Stores the choice and,
+ * Select the speaker/output device (Baran's speaker picker, rt-8). Stores the choice and,
  * if a session is live, re-routes the current <audio> sink immediately; otherwise it's
  * applied on the next connect().
  */

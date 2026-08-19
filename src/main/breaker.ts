@@ -7,10 +7,10 @@
  * signals and returns decisions; the caller (the heartbeat beat in index.ts)
  * performs the enforcement (send a corrective message, notify, kill+archive) and
  * emits BreakerState on the separate `control:breakerState` channel (Seam 2 with
- * Oscar/#7, whose avatar adapter gives breaker level precedence over hook status).
+ * Baran/#7, whose avatar adapter gives breaker level precedence over hook status).
  *
  * Inputs aggregate three sources:
- *   (a) Oscar's usage samples via UsageProvider [Seam 1] — for cost + token velocity;
+ *   (a) Baran's usage samples via UsageProvider [Seam 1] — for cost + token velocity;
  *   (b) hook events (repeated identical tool calls, api_error storms) — fed in by
  *       HookServer through recordToolUse/recordError;
  *   (c) file-mtime no-progress — passed per-agent by the beat as `progressing`.
@@ -27,7 +27,7 @@ import type { AgentUsageSample } from './usage';
 
 export type BreakerLevel = 'healthy' | 'steering' | 'constrained' | 'stopped';
 
-/** Emitted on control:breakerState (Seam 2). One per agent per beat so Oscar's
+/** Emitted on control:breakerState (Seam 2). One per agent per beat so Baran's
  *  dashboard/avatars stay live; `level` takes precedence over hook-derived status. */
 export interface BreakerState {
   agentId: string;

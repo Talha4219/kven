@@ -26,7 +26,7 @@ import { PixelButton } from './PixelButton';
 import { Icon } from './Icon';
 import { DEFAULT_HERO, type HeroPayload } from '@shared/heroPayload';
 
-const GITHUB_REPO_URL = 'https://github.com/your-github-user/kven';
+const GITHUB_REPO_URL = 'https://github.com/Talha4219/kven-assistant';
 
 export function SettingsHeroCard() {
   const [version, setVersion] = useState<string | null>(null);

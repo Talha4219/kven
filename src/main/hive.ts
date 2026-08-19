@@ -556,7 +556,7 @@ export class HiveManager {
       mcpDefaults?: { [id: string]: { enabled: boolean } };
       /** App-resources `skills/` source dir (W3). The bundled read-only skills are
        *  copied into the agent's `.claude/skills/` per spawn; undefined or missing
-       *  is a no-op (tolerated until Kevin populates the resource dir). */
+       *  is a no-op (tolerated until Choto populates the resource dir). */
       skillsDir?: string;
     } = {}
   ): Promise<SpawnInjection> {
@@ -574,7 +574,7 @@ export class HiveManager {
     // W3 — bundled read-only skills: refresh the agent's .claude/skills/ from the
     // app-resources skills/ dir on every spawn (same policy as identity.md), so an
     // agent always rides with the shipped safe skill set. Tolerant: a missing or
-    // partial source dir is a no-op (Kevin populates the resource dir in lp-manifest).
+    // partial source dir is a no-op (Choto populates the resource dir in lp-manifest).
     if (opts.skillsDir) this.copyBundledSkills(opts.skillsDir, join(dir, '.claude', 'skills'));
 
     const memory = join(dir, 'memory.md');
@@ -696,7 +696,7 @@ export class HiveManager {
               // global ~/.pi is never touched) that posts cth-hook-shaped payloads to
               // HIVE_SOCK on tool_call/agent_end and auto-approves tools when the floor
               // is in auto mode. HIVE_AUTO_APPROVE (set in spawnAgentCore from
-              // config.autoMode) gates the auto-allow — Pam guardrail #5.
+              // config.autoMode) gates the auto-allow — Ates guardrail #5.
               // LIVE-UNVERIFIED: the exact extension API surface needs BYOK keys to
               // prove; the renderer idle inbox-wake nudge is the guaranteed drain.
               env.PI_CODING_AGENT_DIR = this.installPiHooks(dir);
@@ -924,7 +924,7 @@ export class HiveManager {
    * W3 — refresh an agent's bundled skills from the app-resources `skills/` dir.
    * Mirrors `identity.md`: overwritten every spawn so the shipped safe set tracks
    * the app. Best-effort and fully tolerant — a missing/empty source dir is a no-op
-   * (Kevin populates the resource dir in lp-manifest), and any IO error is swallowed
+   * (Choto populates the resource dir in lp-manifest), and any IO error is swallowed
    * so skill provisioning can never block a spawn.
    */
   private copyBundledSkills(srcDir: string, destDir: string): void {
@@ -1743,8 +1743,8 @@ export class HiveManager {
       // drains via the renderer nudge + the pty-quiescence idle fallback). For the
       // default god (openai-wire) and a local OpenAI-compatible endpoint this routes
       // through the proxy cleanly. Cross-provider Crush-via-proxy is on-device
-      // live-verify (Dwight verify-crush MF1; the default god model is openai-wire to
-      // match). Literal loopback (Dwight's b1 — no ${VAR} expansion edge cases);
+      // live-verify (Emir verify-crush MF1; the default god model is openai-wire to
+      // match). Literal loopback (Emir's b1 — no ${VAR} expansion edge cases);
       // Crush merges config so only base_url is rewritten.
       const wireProvider = api === 'anthropic' ? 'anthropic' : 'openai';
       const providers: Record<string, { base_url: string }> = { [wireProvider]: { base_url: loopbackUrl } };
@@ -1901,7 +1901,7 @@ export class HiveManager {
   /**
    * Append one cost sample to the durable, append-only ledger at
    * `<root>/cost-ledger.jsonl` (Lane A #6.6d). This is the SOLE durable cost
-   * store; its row is exactly the shape Kevin (#4) reserves for the cost_ledger
+   * store; its row is exactly the shape Choto (#4) reserves for the cost_ledger
    * SQLite table, so migration is a mechanical INSERT…SELECT.
    *
    * 🔒 PII: persist ONLY the allowlisted AgentUsageSample — NEVER a raw OTel
@@ -1917,7 +1917,7 @@ export class HiveManager {
   appendCostLedger(sample: AgentUsageSample): void {
     const root = this.root();
     if (!root) return;
-    // Fully snake_case so the row maps 1:1 onto Kevin's (#4) cost_ledger SQLite
+    // Fully snake_case so the row maps 1:1 onto Choto's (#4) cost_ledger SQLite
     // columns (agent_id, session_id, ts, input, output, cache_read,
     // cache_creation, model, usd) — migration is a straight INSERT…SELECT.
     const row = {
@@ -2239,7 +2239,7 @@ process.stdin.on('end', () => {
 // A bundled extension for Pi (earendil-works). Pi exposes a pi.on(event,…)
 // lifecycle; this posts cth-hook-shaped payloads to HIVE_SOCK on tool_call /
 // tool_result / agent_end and AUTO-APPROVES tool calls when the floor is in auto
-// mode (HIVE_AUTO_APPROVE, gated by config.autoMode — Pam guardrail #5). The
+// mode (HIVE_AUTO_APPROVE, gated by config.autoMode — Ates guardrail #5). The
 // agent_end→Stop keeps the harness status in step (→ idle) so the renderer idle
 // inbox-wake nudge can deliver mail. Fully wrapped so a wrong API guess can never
 // break the spawn. LIVE-UNVERIFIED (Pi's exact extension surface needs BYOK keys).

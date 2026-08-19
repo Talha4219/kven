@@ -2,7 +2,7 @@
  * Realtime Aria — voice session cost HUD (card rt-9, cost-guard).
  *
  * A compact meter for the live voice session's spend. Reads the cost store
- * (costStore.ts), which Kevin's session feeds via resetRealtimeCost() on connect
+ * (costStore.ts), which Choto's session feeds via resetRealtimeCost() on connect
  * and recordRealtimeUsage() on each usage delta. Self-contained: mount it once
  * near the voice toggle (Aria's card / fullscreen header) — it renders its own
  * state and needs no props.

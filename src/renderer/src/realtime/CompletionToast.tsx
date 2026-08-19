@@ -10,8 +10,8 @@
  *
  * Self-contained + self-subscribing: it listens on `window.cth.onRealtimeCompletion`,
  * stacks recent completions, auto-dismisses each, and renders nothing when empty. It owns
- * no realtime/session state — it's a pure consumer of Kevin's push channel (rt-12 seam).
- * Mount it ONCE anywhere in the renderer tree (Kevin wires the one-line mount near the
+ * no realtime/session state — it's a pure consumer of Choto's push channel (rt-12 seam).
+ * Mount it ONCE anywhere in the renderer tree (Choto wires the one-line mount near the
  * voice UI); positioning is a fixed bottom-right overlay so it's layout-independent.
  *
  * Branch feat/realtime-aria. See board.md "🎙 REALTIME ARIA".

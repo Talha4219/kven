@@ -4,12 +4,12 @@
  * When voice-Aria DISPATCHES work (fire-and-notify, the default pattern), he does
  * NOT block on it. This module is the main-process engine that watches each dispatched
  * task for completion and EMITS a completion event so the rest of the realtime stack can
- * make Aria speak it unprompted ("Oscar finished — want details?").
+ * make Aria speak it unprompted ("Baran finished — want details?").
  *
- * OWNERSHIP / SEAM (rt-12 split, god-ruled 2026-06-25): this module is OWNED by Jim and
- * is deliberately DISJOINT from Kevin's realtime CORE files. It NEVER imports session.ts
+ * OWNERSHIP / SEAM (rt-12 split, god-ruled 2026-06-25): this module is OWNED by Reyyan and
+ * is deliberately DISJOINT from Choto's realtime CORE files. It NEVER imports session.ts
  * / the live RealtimeSession / electron — it only takes injected readers + a clock and
- * EMITS via callbacks. Kevin's side subscribes `onCompletion(...)` and pushes the event
+ * EMITS via callbacks. Choto's side subscribes `onCompletion(...)` and pushes the event
  * down the new main→renderer channel (preload binding + session.ts injection), calls
  * `track(...)` from the dispatch action, flips `setSessionLive(...)` on connect/disconnect,
  * and `drainQueuedCompletions()` at warm-start. Keeping this file electron-free + reader-
@@ -82,7 +82,7 @@ export interface CompletionResult {
 
 /**
  * The completion object the watcher emits via `onCompletion` AND returns from
- * `drainQueuedCompletions()` — the SAME shape (rt-12 contract lock with Kevin). Kevin
+ * `drainQueuedCompletions()` — the SAME shape (rt-12 contract lock with Choto). Choto
  * forwards it verbatim over the main→renderer push channel and into warm-start, so every
  * field here reaches Aria. `summary` is the human-speakable line; `completedAt` is
  * epoch-ms. The trailing fields are extra context (safe to ignore on the wire).
@@ -137,7 +137,7 @@ const INJECTION_PATTERNS: RegExp[] = [
  * N3 defense-in-depth: the spoken summary embeds `objective`, which comes from a
  * possibly-crafted task. Strip control chars, neutralize prompt-injection lead-ins, collapse
  * whitespace, and cap length so a malicious objective can't steer what Aria says or does.
- * (Kevin also neutralizes at the session.ts injection seam — this is the watcher-half belt.)
+ * (Choto also neutralizes at the session.ts injection seam — this is the watcher-half belt.)
  */
 function neutralizeForVoice(text: string): string {
   let out = text.replace(/[\u0000-\u001f\u007f]+/g, ' ');
@@ -232,7 +232,7 @@ interface Waiter {
  * The completion watcher. Construct once (in index.ts), `start()` it, `track()` each voice
  * dispatch, and `onCompletion()` to receive events. It polls the injected readers, runs the
  * pure detector, and routes results: emit when a session is live, else queue (+ notify) for
- * warm-start. It owns NO realtime/session/electron state — Kevin's core wires the emit to
+ * warm-start. It owns NO realtime/session/electron state — Choto's core wires the emit to
  * the main→renderer push channel.
  */
 export class RealtimeCompletionWatcher {
@@ -430,7 +430,7 @@ function safeRead<T>(reader: () => T[]): T[] {
   }
 }
 
-// --- shared singleton (rt-12 contract lock with Kevin) ------------------------------------
+// --- shared singleton (rt-12 contract lock with Choto) ------------------------------------
 // ONE watcher instance across the whole main process: one pending map, one queue. index.ts
 // initializes it with the real hive-backed readers; realtimeActions.ts (and any other core
 // caller) get that SAME instance via getCompletionWatcher(). This avoids a per-call watcher

@@ -20,7 +20,7 @@ import { getSecret, hasSecret } from './integrations';
 /** Mirrors `providerKeyRef('openai')` in src/main/index.ts (BACKEND_KEY_ENV maps
  *  openai→OPENAI_API_KEY). Inlined as a local const so this module needs no new
  *  export added to index.ts — keeping the index.ts edit to a single registration
- *  line (rt-1 COORD: Oscar also edits index.ts). */
+ *  line (rt-1 COORD: Baran also edits index.ts). */
 const OPENAI_KEY_REF = 'apikey:openai';
 
 /** GA speech-to-speech model for the voice orchestrator (v0.3.4: bumped to the
@@ -111,7 +111,7 @@ export async function mintRealtimeToken(model: string = REALTIME_MODEL): Promise
 
 /** Register the renderer-facing realtime IPC. A SINGLE call from index.ts (rather
  *  than per-handler `ipcMain.handle` lines there) keeps the index.ts footprint to
- *  one line — rt-1 COORD note (Oscar also edits index.ts). Neither handler ever
+ *  one line — rt-1 COORD note (Baran also edits index.ts). Neither handler ever
  *  returns the real OpenAI key. */
 export function registerRealtimeIpc(): void {
   // Boolean presence only — gates the voice toggle.
