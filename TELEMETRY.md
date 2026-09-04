@@ -6,7 +6,7 @@ and make the product better. This document is the complete, authoritative
 contract: **if an event or property is not listed here, the app does not send
 it.** The implementation lives in [`src/main/analytics.ts`](src/main/analytics.ts)
 and enforces this list as a hard allowlist — the code and this file are kept in
-lockstep, and because the repo is open source you can verify that yourself.
+lockstep, and because the repo is source-available you can verify that yourself.
 
 ## What is sent
 

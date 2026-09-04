@@ -2,8 +2,7 @@
   "name": "munder-difflin-blog",
   "version": "0.1.0",
   "private": true,
-  "description": "The Munder Difflin blog — built with Eleventy, deployed to munderdiffl.in/blog via GitHub Pages.",
-  "license": "MIT",
+  "description": "The Munder Difflin blog — built with Eleventy, deployed to talhashams.me/blog via GitHub Pages.",
   "type": "module",
   "scripts": {
     "build": "npm run clean && eleventy && node scripts/postbuild.mjs",

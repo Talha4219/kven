@@ -152,7 +152,7 @@ goals concrete and the guardrails tight, and the overnight shift earns its keep.
 
 ---
 
-Munder Difflin gives you [everything an overnight hive needs](https://munderdiffl.in/#why): an autonomous Stop-hook loop, an auto mode that skips routine
+Munder Difflin gives you [everything an overnight hive needs](https://talhashams.me/#why): an autonomous Stop-hook loop, an auto mode that skips routine
 approvals, an orchestrator that escalates only the critical few, and a git audit log of the night.
-[Download Munder Difflin](https://munderdiffl.in/#install) to let a hive of Claude Code agents build
+[Download Munder Difflin](https://talhashams.me/#install) to let a hive of Claude Code agents build
 while you sleep; it's free and open source.

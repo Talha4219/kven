@@ -1,8 +1,8 @@
 /**
- * Realtime Aria — microphone & speaker device picker (card rt-8, Phase 1).
+ * Realtime Bro — microphone & speaker device picker (card rt-8, Phase 1).
  *
  * Lets the user choose WHICH microphone the voice loop captures and WHICH speaker
- * it plays Aria's voice through. Selections are held in the realtime session
+ * it plays Bro's voice through. Selections are held in the realtime session
  * store via `setDeviceId()` / `setOutputDeviceId()` (see session.ts): the mic is
  * applied on the next connect() (getUserMedia `{ deviceId: { exact } }`), the
  * speaker is applied immediately to the live `<audio>` sink via `setSinkId()` (and
@@ -14,10 +14,10 @@
  * Free Flow is live — see src/main/index.ts). Before that we show generic
  * "Microphone N" / "Speaker N" names and a hint, so the picker is usable cold.
  *
- * Branch feat/realtime-aria. See board.md "🎙 REALTIME ARIA".
+ * Branch feat/realtime-bro. See board.md "🎙 REALTIME ARIA".
  */
 import { useCallback, useEffect, useState } from 'react';
-import { useRealtimeAria } from './session';
+import { useRealtimeBro } from './session';
 
 interface AudioDevice {
   deviceId: string;
@@ -58,7 +58,7 @@ const selectStyle: React.CSSProperties = {
 };
 
 export function RealtimeDevicePicker(): React.ReactElement {
-  const { deviceId, setDeviceId, outputDeviceId, setOutputDeviceId } = useRealtimeAria();
+  const { deviceId, setDeviceId, outputDeviceId, setOutputDeviceId } = useRealtimeBro();
   const [mics, setMics] = useState<AudioDevice[]>([]);
   const [speakers, setSpeakers] = useState<AudioDevice[]>([]);
   /** True once at least one device exposes a real label ⇒ mic permission granted. */
@@ -123,7 +123,7 @@ export function RealtimeDevicePicker(): React.ReactElement {
       {!labelled && (
         <span style={{ fontSize: 12, lineHeight: '16px', color: 'var(--cth-ink-500)' }}>
           Device names appear after you first start a voice session and grant mic access.
-          The microphone choice applies the next time Aria connects; the speaker switches live.
+          The microphone choice applies the next time Bro connects; the speaker switches live.
         </span>
       )}
     </div>

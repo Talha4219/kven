@@ -144,7 +144,7 @@ reply comes back to the agent as a normal message.
 ---
 
 Munder Difflin runs exactly this system: a hive of Claude Code agents that message each other through
-atomic file mailboxes, escalate to [a GOD orchestrator](https://munderdiffl.in/#how), and ping you only
+atomic file mailboxes, escalate to [a GOD orchestrator](https://talhashams.me/#how), and ping you only
 for the calls that matter — every envelope visible on a live office floor.
-[Download Munder Difflin](https://munderdiffl.in/#install) to watch your agents actually talk to each
+[Download Munder Difflin](https://talhashams.me/#install) to watch your agents actually talk to each
 other; it's free and open source.

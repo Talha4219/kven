@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Running Agents in tmux vs an Agent Harness — Munder Difflin Blog</title>
 <meta name="description" content="tmux panes, git worktrees, shell scripts, and cron will absolutely run several Claude Code sessions at once. Here&#39;s what that DIY setup does well, where it breaks at scale, and what a purpose-built agent harness automates." />
-<link rel="canonical" href="https://munderdiffl.in/blog/tmux-and-scripts-vs-an-agent-harness/" />
+<link rel="canonical" href="https://talhashams.me/blog/tmux-and-scripts-vs-an-agent-harness/" />
 
-<link rel="icon" type="image/png" href="https://munderdiffl.in/logo.png" />
-<link rel="apple-touch-icon" href="https://munderdiffl.in/logo.png" />
+<link rel="icon" type="image/png" href="https://talhashams.me/logo.png" />
+<link rel="apple-touch-icon" href="https://talhashams.me/logo.png" />
 <meta name="theme-color" content="#F5F2E8" />
 
 <!-- Open Graph -->
@@ -16,8 +16,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Running Agents in tmux vs an Agent Harness — Munder Difflin Blog" />
 <meta property="og:description" content="tmux panes, git worktrees, shell scripts, and cron will absolutely run several Claude Code sessions at once. Here&#39;s what that DIY setup does well, where it breaks at scale, and what a purpose-built agent harness automates." />
-<meta property="og:url" content="https://munderdiffl.in/blog/tmux-and-scripts-vs-an-agent-harness/" />
-<meta property="og:image" content="https://munderdiffl.in/media/og.png" />
+<meta property="og:url" content="https://talhashams.me/blog/tmux-and-scripts-vs-an-agent-harness/" />
+<meta property="og:image" content="https://talhashams.me/media/og.png" />
 <meta property="og:locale" content="en_US" />
 <meta property="article:published_time" content="2026-07-03T00:00:00.000Z" />
 <meta property="article:author" content="Chaitanya Giri" />
@@ -32,9 +32,9 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Running Agents in tmux vs an Agent Harness — Munder Difflin Blog" />
 <meta name="twitter:description" content="tmux panes, git worktrees, shell scripts, and cron will absolutely run several Claude Code sessions at once. Here&#39;s what that DIY setup does well, where it breaks at scale, and what a purpose-built agent harness automates." />
-<meta name="twitter:image" content="https://munderdiffl.in/media/og.png" />
+<meta name="twitter:image" content="https://talhashams.me/media/og.png" />
 
-<link rel="alternate" type="application/atom+xml" title="Munder Difflin Blog" href="https://munderdiffl.in/blog/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="Munder Difflin Blog" href="https://talhashams.me/blog/feed.xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -46,20 +46,20 @@
   "@type": "BlogPosting",
   "headline": "Running Agents in tmux vs an Agent Harness",
   "description": "tmux panes, git worktrees, shell scripts, and cron will absolutely run several Claude Code sessions at once. Here's what that DIY setup does well, where it breaks at scale, and what a purpose-built agent harness automates.",
-  "image": ["https://munderdiffl.in/media/og.png"],
+  "image": ["https://talhashams.me/media/og.png"],
   "datePublished": "2026-07-03T00:00:00.000Z",
   "dateModified": "2026-07-03T00:00:00.000Z",
   "author": { "@type": "Person", "name": "Chaitanya Giri" },
   "publisher": {
     "@type": "Organization",
     "name": "Munder Difflin",
-    "logo": { "@type": "ImageObject", "url": "https://munderdiffl.in/logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://talhashams.me/logo.png" }
   },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://munderdiffl.in/blog/tmux-and-scripts-vs-an-agent-harness/" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://talhashams.me/blog/tmux-and-scripts-vs-an-agent-harness/" },
   "keywords": "tmux vs agent harness, run claude code in tmux, multiple claude code sessions tmux, git worktrees parallel agents, diy multi-agent setup, agent harness vs shell scripts",
   "articleSection": "Comparisons",
   "inLanguage": "en-US",
-  "url": "https://munderdiffl.in/blog/tmux-and-scripts-vs-an-agent-harness/"
+  "url": "https://talhashams.me/blog/tmux-and-scripts-vs-an-agent-harness/"
 }
 </script>
 <script type="application/ld+json">
@@ -67,9 +67,9 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://munderdiffl.in/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://munderdiffl.in/blog/" },
-    { "@type": "ListItem", "position": 3, "name": "Running Agents in tmux vs an Agent Harness", "item": "https://munderdiffl.in/blog/tmux-and-scripts-vs-an-agent-harness/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talhashams.me/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://talhashams.me/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Running Agents in tmux vs an Agent Harness", "item": "https://talhashams.me/blog/tmux-and-scripts-vs-an-agent-harness/" }
   ]
 }
 </script>
@@ -84,7 +84,7 @@
     { "@type": "Question", "name": "Does using a harness mean giving up the terminal?", "acceptedAnswer": { "@type": "Answer", "text": "No. In Munder Difflin every agent is still a real CLI process — claude, codex, copilot, and others — running in a genuine pseudo-terminal via node-pty. You can open any agent's live terminal and type into it directly, exactly like a tmux pane. The harness sits around the terminals, not instead of them." } },
     { "@type": "Question", "name": "Is the DIY tmux approach ever the right choice?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. If you run one or two parallel sessions, review everything yourself, and don't need triggers or unattended operation, tmux plus worktrees is simple, transparent, and has zero new dependencies. The harness earns its keep when agents need to hand work to each other, run while you're away, remember across sessions, or stay inside a budget." } },
     { "@type": "Question", "name": "Do tmux-based agents share memory between sessions?", "acceptedAnswer": { "@type": "Answer", "text": "No. Each CLI session starts with a fresh context, and anything one agent learned dies with its scrollback unless you manually paste it into another session or a file. A harness like Munder Difflin gives every agent markdown-first long-term memory plus a shared semantic index, so what one agent learns is recallable by all of them across restarts." } },
-    { "@type": "Question", "name": "Is Munder Difflin free if I already pay for Claude Code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's MIT-licensed and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there's no extra platform fee on top of your existing model spend." } }
+    { "@type": "Question", "name": "Is Munder Difflin free if I already pay for Claude Code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's source-available and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there's no extra platform fee on top of your existing model spend." } }
     
   ]
 }
@@ -118,19 +118,19 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <nav id="nav">
-  <a class="brand" href="https://munderdiffl.in" aria-label="Munder Difflin home">
-    <img class="brand-logo" src="https://munderdiffl.in/logo.png" width="1318" height="840" alt="Munder Difflin, Inc. — Multi-Agent Harness" />
+  <a class="brand" href="https://talhashams.me" aria-label="Munder Difflin home">
+    <img class="brand-logo" src="https://talhashams.me/logo.png" width="1318" height="840" alt="Munder Difflin, Inc. — Multi-Agent Harness" />
   </a>
   <span class="spacer"></span>
   <div class="links">
     <a href="/blog/">Latest</a>
     <a href="/blog/topics/">Topics</a>
     <a href="/blog/about/">About</a>
-    <a href="https://munderdiffl.in">↗ Product</a>
+    <a href="https://talhashams.me">↗ Product</a>
   </div>
   <div class="nav-actions">
-    <a class="btn sm" href="https://munderdiffl.in/blog/feed.xml" aria-label="RSS feed">⤵ RSS</a>
-    <a class="btn sm primary" href="https://munderdiffl.in/#install">⤓ Download</a>
+    <a class="btn sm" href="https://talhashams.me/blog/feed.xml" aria-label="RSS feed">⤵ RSS</a>
+    <a class="btn sm primary" href="https://talhashams.me/#install">⤓ Download</a>
   </div>
 </nav>
 
@@ -158,7 +158,7 @@
 
   <div class="post-wrap wrap">
     <div class="prose">
-      <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>tmux + git worktrees + shell scripts is a real, respectable way to run several Claude Code sessions in parallel</strong> — it's the setup half the community uses, and at two or three agents it's genuinely fine. What breaks at scale is everything <em>between</em> the panes: <strong>no routing, no shared memory, no budgets, no crash recovery, coordination via copy-paste, and scrollback archaeology to find out what happened overnight</strong>. An agent harness automates exactly that layer while still running the same CLI processes. <strong>Munder Difflin is, roughly, the tmux setup you would have built yourself after six months</strong> — free, open source, and local-first.</p></div>
+      <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>tmux + git worktrees + shell scripts is a real, respectable way to run several Claude Code sessions in parallel</strong> — it's the setup half the community uses, and at two or three agents it's genuinely fine. What breaks at scale is everything <em>between</em> the panes: <strong>no routing, no shared memory, no budgets, no crash recovery, coordination via copy-paste, and scrollback archaeology to find out what happened overnight</strong>. An agent harness automates exactly that layer while still running the same CLI processes. <strong>Munder Difflin is, roughly, the tmux setup you would have built yourself after six months</strong> — free, source-available, and local-first.</p></div>
 <p>Let’s start by giving the DIY path its due, because it deserves it.</p>
 <p>The standard recipe — tmux for sessions, <a href="https://git-scm.com/docs/git-worktree">git worktrees</a> for isolation, a shell script to spin everything up, maybe cron for the nightly run — is not a hack. Worktrees give each agent its own working directory and branch while sharing one repository, so parallel sessions never fight over a checkout. tmux gives you named, detachable sessions that survive a closed laptop lid on a remote box. Boris Cherny, one of Claude Code’s creators, has called parallel worktree sessions the <a href="https://www.mindstudio.ai/blog/claude-code-git-worktrees-parallel-branches">“single biggest productivity unlock”</a>, and Claude Code has since added native worktree support. Tools like <a href="https://github.com/smtg-ai/claude-squad">Claude Squad</a> exist precisely because this pattern is popular enough to be worth wrapping in a TUI.</p>
 <p>If you’re running two agents on two branches and reviewing everything yourself, stop reading — you don’t have a problem. The problem shows up when you try to make the panes into a <em>team</em>.</p>
@@ -182,7 +182,7 @@
 </ul>
 <p>Crucially, the terminals are still terminals. Every agent is the real CLI — Claude Code, Codex, Copilot CLI, and four others — running in a real pseudo-terminal you can pop open and type into, exactly like the pane you left behind.</p>
 <h2 id="the-honest-framing" tabindex="-1">The honest framing <a class="anchor" href="#the-honest-framing" aria-hidden="true">#</a></h2>
-<p>The DIY path isn’t wrong; it’s version one. Every feature above started life as somebody’s shell script, and if you kept iterating on your tmux setup — add a router script, a memory file, a budget checker, a Slack bridge, a recovery script — you’d converge on a harness. Munder Difflin is that convergence, already built, MIT-licensed, and local-first, so the six months of scripting goes into your actual work instead.</p>
+<p>The DIY path isn’t wrong; it’s version one. Every feature above started life as somebody’s shell script, and if you kept iterating on your tmux setup — add a router script, a memory file, a budget checker, a Slack bridge, a recovery script — you’d converge on a harness. Munder Difflin is that convergence, already built, source-available, and local-first, so the six months of scripting goes into your actual work instead.</p>
 <p>If you’re at two panes, enjoy them. If you’re at five and tired of being the message bus, <a href="https://github.com/chaitanyagiri/munder-difflin/releases/latest">download the latest release</a> — and if it saves you a script or two, <a href="https://github.com/chaitanyagiri/munder-difflin">a GitHub star</a> is appreciated.</p>
 
 
@@ -217,7 +217,7 @@
         
         <div class="qa">
           <p class="q">Is Munder Difflin free if I already pay for Claude Code?</p>
-          <p class="a">Yes. It&#39;s MIT-licensed and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there&#39;s no extra platform fee on top of your existing model spend.</p>
+          <p class="a">Yes. It&#39;s source-available and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there&#39;s no extra platform fee on top of your existing model spend.</p>
         </div>
         
       </section>
@@ -314,21 +314,21 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a class="foot-brand brand" href="https://munderdiffl.in" aria-label="Munder Difflin home">
-        <img class="brand-logo" src="https://munderdiffl.in/logo.png" width="1318" height="840" alt="Munder Difflin, Inc. — Multi-Agent Harness" />
+      <a class="foot-brand brand" href="https://talhashams.me" aria-label="Munder Difflin home">
+        <img class="brand-logo" src="https://talhashams.me/logo.png" width="1318" height="840" alt="Munder Difflin, Inc. — Multi-Agent Harness" />
       </a>
       <div class="foot-links">
         <a href="/blog/">Latest</a>
         <a href="/blog/topics/">Topics</a>
         <a href="/blog/about/">About</a>
-        <a href="https://munderdiffl.in/blog/feed.xml">RSS</a>
+        <a href="https://talhashams.me/blog/feed.xml">RSS</a>
         <a href="https://github.com/chaitanyagiri/munder-difflin">GitHub</a>
-        <a href="https://munderdiffl.in">munderdiffl.in ↗</a>
+        <a href="https://talhashams.me">talhashams.me ↗</a>
       </div>
     </div>
     <div class="foot-meta">
-      © 2026 Munder Difflin · Local-first · MIT-licensed ·
-      Built on <a href="https://munderdiffl.in">Electron, React, Pixi.js, xterm.js &amp; node-pty</a>.
+      © 2026 Munder Difflin · Local-first · Source-available ·
+      Built on <a href="https://talhashams.me">Electron, React, Pixi.js, xterm.js &amp; node-pty</a>.
       Run an office of agents while you sleep.
     </div>
   </div>

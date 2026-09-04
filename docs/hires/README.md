@@ -1,12 +1,12 @@
 # Agent Gallery
 
 A community gallery of **shareable hires** — portable agent role templates for the
-[Munder Difflin](https://munderdiffl.in) multi-agent harness. Browse a role, download
+[Munder Difflin](https://talhashams.me) multi-agent harness. Browse a role, download
 its manifest, and import it in the app — its goal, model, flags, and token budget land
 pre-filled (you always review before it spawns).
 
 Static site: no build step, no framework, no trackers. `index.html` + `style.css` +
-`app.js` + `manifests/`. The design mirrors munderdiffl.in's neo-brutalist landing page.
+`app.js` + `manifests/`. The design mirrors talhashams.me's neo-brutalist landing page.
 
 ## Run it locally
 
@@ -66,5 +66,5 @@ auto-spawns — a human reviews the final command and clicks spawn.
 
 ## License
 
-MIT. Not affiliated with NBC's *The Office*, Dunder Mifflin, or (yet) the Munder Difflin
+Source-available. Not affiliated with NBC's *The Office*, Dunder Mifflin, or (yet) the Munder Difflin
 project — the integration PR lives in [`../app-pr`](../app-pr).

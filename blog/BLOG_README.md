@@ -1,10 +1,10 @@
 # Munder Difflin Blog
 
 The Munder Difflin blog — a static [Eleventy](https://www.11ty.dev/) site that builds into
-`docs/blog/` and is served at **https://munderdiffl.in/blog** by the same GitHub Pages deploy as
+`docs/blog/` and is served at **https://talhashams.me/blog** by the same GitHub Pages deploy as
 the marketing site.
 
-It's a native extension of [munderdiffl.in](https://munderdiffl.in): warm-paper neo-brutalist,
+It's a native extension of [talhashams.me](https://talhashams.me): warm-paper neo-brutalist,
 JetBrains Mono + Geist, hard offset shadows, square corners. The design tokens mirror
 `docs/DESIGN.md` (the marketing-site source of truth).
 
@@ -117,13 +117,13 @@ They map onto this blog as follows:
 
 ## SEO that's already wired
 
-- Per-page `<title>`, meta description, **canonical** (`https://munderdiffl.in/blog/...`).
+- Per-page `<title>`, meta description, **canonical** (`https://talhashams.me/blog/...`).
 - **OpenGraph** + **Twitter** card tags, with a default OG image and per-post override.
 - **JSON-LD**: `Blog` (index), `BlogPosting` + `BreadcrumbList` (every post), `FAQPage` (when a post
   declares `faq`).
 - Auto-generated **root `sitemap.xml`** and an Atom **`feed.xml`**.
 - **`robots.txt`** is owned by the marketing site (`docs/robots.txt`, maintained alongside
-  `docs/index.html`) and points at `https://munderdiffl.in/sitemap.xml`.
+  `docs/index.html`) and points at `https://talhashams.me/sitemap.xml`.
 - Semantic HTML, single `<h1>`, skip-link, `:focus-visible` outlines, WCAG-AA contrast,
   `prefers-reduced-motion` support, lazy-loaded images.
 
@@ -132,7 +132,7 @@ They map onto this blog as follows:
 ## Deploy
 
 The blog ships as static files under `docs/blog/`, served by the **existing** Pages deploy
-(branch → `/docs`, custom domain `munderdiffl.in`). Two ways to publish:
+(branch → `/docs`, custom domain `talhashams.me`). Two ways to publish:
 
 1. **Manual:** `cd blog && npm run build`, then commit `docs/blog/` and push. Pages redeploys.
 2. **Automated (recommended):** the **Build blog** GitHub Action

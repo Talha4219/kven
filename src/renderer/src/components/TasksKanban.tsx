@@ -170,7 +170,7 @@ export function TasksKanban() {
           {tasks.length} task{tasks.length === 1 ? '' : 's'}
         </span>
         <span style={{ marginLeft: 'auto', fontSize: 11, color: 'var(--cth-ink-300)' }}>
-          new work? dispatch it to Aria (monitor tab)
+          new work? dispatch it to Bro (monitor tab)
         </span>
       </div>
 

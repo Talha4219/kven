@@ -69,8 +69,8 @@ The word *conductor* implies coordination, so it's worth being precise about wha
   genuinely critical (spend, destructive ops, scope) for your sign-off.
 
 That's the model behind [Munder Difflin](/#what): a [GOD orchestrator](/#how) you talk to in plain
-language, shared MemPalace memory, inter-agent messaging, and a watchable office floor — open source
-(MIT) and running on macOS, Windows, and Linux.
+language, shared MemPalace memory, inter-agent messaging, and a watchable office floor — source-available
+and running on macOS, Windows, and Linux.
 
 ## Conductor vs an orchestrated hive
 

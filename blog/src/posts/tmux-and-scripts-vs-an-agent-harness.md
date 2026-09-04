@@ -23,10 +23,10 @@ faq:
   - q: "Do tmux-based agents share memory between sessions?"
     a: "No. Each CLI session starts with a fresh context, and anything one agent learned dies with its scrollback unless you manually paste it into another session or a file. A harness like Munder Difflin gives every agent markdown-first long-term memory plus a shared semantic index, so what one agent learns is recallable by all of them across restarts."
   - q: "Is Munder Difflin free if I already pay for Claude Code?"
-    a: "Yes. It's MIT-licensed and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there's no extra platform fee on top of your existing model spend."
+    a: "Yes. It's source-available and free, and it drives the CLI subscriptions you already have — Claude Code, Codex, Antigravity, OpenCode, Crush, pi.dev, and GitHub Copilot CLI — so there's no extra platform fee on top of your existing model spend."
 ---
 
-<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>tmux + git worktrees + shell scripts is a real, respectable way to run several Claude Code sessions in parallel</strong> — it's the setup half the community uses, and at two or three agents it's genuinely fine. What breaks at scale is everything <em>between</em> the panes: <strong>no routing, no shared memory, no budgets, no crash recovery, coordination via copy-paste, and scrollback archaeology to find out what happened overnight</strong>. An agent harness automates exactly that layer while still running the same CLI processes. <strong>Munder Difflin is, roughly, the tmux setup you would have built yourself after six months</strong> — free, open source, and local-first.</p></div>
+<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>tmux + git worktrees + shell scripts is a real, respectable way to run several Claude Code sessions in parallel</strong> — it's the setup half the community uses, and at two or three agents it's genuinely fine. What breaks at scale is everything <em>between</em> the panes: <strong>no routing, no shared memory, no budgets, no crash recovery, coordination via copy-paste, and scrollback archaeology to find out what happened overnight</strong>. An agent harness automates exactly that layer while still running the same CLI processes. <strong>Munder Difflin is, roughly, the tmux setup you would have built yourself after six months</strong> — free, source-available, and local-first.</p></div>
 
 Let's start by giving the DIY path its due, because it deserves it.
 
@@ -65,6 +65,6 @@ Crucially, the terminals are still terminals. Every agent is the real CLI — Cl
 
 ## The honest framing
 
-The DIY path isn't wrong; it's version one. Every feature above started life as somebody's shell script, and if you kept iterating on your tmux setup — add a router script, a memory file, a budget checker, a Slack bridge, a recovery script — you'd converge on a harness. Munder Difflin is that convergence, already built, MIT-licensed, and local-first, so the six months of scripting goes into your actual work instead.
+The DIY path isn't wrong; it's version one. Every feature above started life as somebody's shell script, and if you kept iterating on your tmux setup — add a router script, a memory file, a budget checker, a Slack bridge, a recovery script — you'd converge on a harness. Munder Difflin is that convergence, already built, source-available, and local-first, so the six months of scripting goes into your actual work instead.
 
 If you're at two panes, enjoy them. If you're at five and tired of being the message bus, [download the latest release](https://github.com/chaitanyagiri/munder-difflin/releases/latest) — and if it saves you a script or two, [a GitHub star](https://github.com/chaitanyagiri/munder-difflin) is appreciated.

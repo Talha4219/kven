@@ -3,7 +3,7 @@ import { PixelPanel } from './PixelPanel';
 import { PixelBadge, StatusKind } from './PixelBadge';
 import { useHasTerminalDraft } from './terminalPool';
 import { SpritePortrait } from './SpritePortrait';
-import { RealtimeAriaToggle } from './RealtimeAriaToggle';
+import { RealtimeBroToggle } from './RealtimeBroToggle';
 import { CostHud } from '@/realtime/CostHud';
 import { AccentColorName } from '@/design/tokens';
 import { OfficeCharacterName } from '@/scene/office/cast';
@@ -58,7 +58,7 @@ export function AgentCard({
   const [hover, setHover] = useState(false);
   const typing = useHasTerminalDraft(ptyId);
   // IDENTITY and SELECTION are two different things, and conflating them is why
-  // selecting Aria appeared to do nothing.
+  // selecting Bro appeared to do nothing.
   //
   // The card used to pass `isGod || selected` into PixelPanel's 'active' variant,
   // whose frame is `inset 1px + 3px accent + 5px ink` — five pixels of border in
@@ -236,7 +236,7 @@ export function AgentCard({
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <RealtimeAriaToggle />
+                <RealtimeBroToggle />
                 <CostHud compact />
               </div>
             ) : (

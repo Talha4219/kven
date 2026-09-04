@@ -3,7 +3,7 @@ import { DateTime } from "luxon";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 
-// The blog is always served under this path on munderdiffl.in. We prefix links
+// The blog is always served under this path on talhashams.me. We prefix links
 // explicitly (via the `u` filter) instead of Eleventy's pathPrefix, whose HTML
 // auto-transform double-applies the prefix when combined with the `url` filter.
 const BASE = "/blog";

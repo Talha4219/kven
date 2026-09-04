@@ -1,9 +1,9 @@
 # Munder Difflin v0.4.4
 
 **A local hive of Claude Code, Antigravity, Codex, Grok & Copilot agents that run themselves** — messaging,
-routing, and remembering, coordinated by your clone, Michael, who you talk to. Local-first and open source.
+routing, and remembering, coordinated by your clone, Michael, who you talk to. Local-first and source-available.
 
-### → [**munderdiffl.in**](https://munderdiffl.in/) — see it in action, then grab a build below
+### → [**talhashams.me**](https://talhashams.me/) — see it in action, then grab a build below
 
 ---
 
@@ -320,7 +320,7 @@ because xterm takes literals, so it moved with them.
         <li><i>Hive</i><div><b>Compact fires once, not every hour</b></div></li>
         <li><i>Hive</i><div><b>The cost ledger is out of your git history</b></div></li>
         <li><i>Office</i><div><b>The floor stops rendering when nobody is looking</b></div></li>
-        <li><i>Layout</i><div><b>Michael sits first on the dock again</b></div></li>
+        <li><i>Layout</i><div><b>Bro sits first on the dock again</b></div></li>
       </ul>
     </div>
     <div class="nav">
@@ -360,7 +360,7 @@ because xterm takes literals, so it moved with them.
 
 ## Still new in 0.4.3 — *Michael is the logo*
 
-**The mark is a face now.** Munder Difflin has always been an office you watch people work in,
+**The mark is a face now.** Kven has always been an office you watch people work in,
 and the icon was a pair of script initials on a gradient. It's Michael — your clone — drawn in
 the app's own pixel art, on the brand yellow, looking straight back at you.
 
@@ -369,7 +369,7 @@ the app's own pixel art, on the brand yellow, looking straight back at you.
   redrawing of another.
 - **The SVG is the source of truth.** The mark is authored as pure vector — every pixel of the
   sprite is a rect, with no fonts, no gradients and no filters — and every raster in `build/`
-  and `docs/` is generated from it by [`tools/make-logo.cjs`](https://github.com/chaitanyagiri/munder-difflin/blob/main/tools/make-logo.cjs).
+  and `docs/` is generated from it by [`tools/make-logo.cjs`].
   The old icon depended on the Lobster webfont being installed to render correctly.
 - **Icons are native at every size.** A real multi-resolution `.icns` (16→1024, with the macOS
   drop shadow) and a `.ico` carrying six sizes, plus a 32px favicon and a 180px apple-touch-icon,
@@ -387,8 +387,7 @@ the app's own pixel art, on the brand yellow, looking straight back at you.
 ## Still new in 0.4.2 — *Anonymous usage stats, done in the open*
 
 Munder Difflin now sends a **small set of anonymous usage events** (app opened, agent spawned,
-feature used) so we can tell whether features are actually used. It is built the way an
-open-source project should build it:
+feature used) so we can tell whether features are actually used. It is built the way a source-available project should build it:
 
 - **[TELEMETRY.md](https://github.com/chaitanyagiri/munder-difflin/blob/main/TELEMETRY.md) is the
   complete contract.** Every event and property is listed there, and the code enforces that list
@@ -407,7 +406,7 @@ open-source project should build it:
 **Michael is your clone.** The website has been describing Munder Difflin as a clone of you that
 works around the clock — the app still called it a "GOD agent." Now they match.
 
-- **Your clone, not the GOD agent.** Michael is described as your clone throughout onboarding,
+- **Your clone, not the GOD agent.** Br is described as your clone throughout onboarding,
   and his card on the floor carries a **BOSS** tag — he's the boss of the agents, you're still
   the boss of him.
 - **Onboarding was rewritten.** It opens on what you actually get ("a clone of you, working
@@ -432,7 +431,7 @@ works around the clock — the app still called it a "GOD agent." Now they match
 ## Previously
 
 - **0.4.0** — *the brand grew up*: one yellow "MD" mark across the dock icon, in-app logo, site
-  favicon, and munderdiffl.in; the landing page rebuilt around real screenshots and a live
+  favicon, and talhashams.me; the landing page rebuilt around real screenshots and a live
   pixel-floor sim; pricing reframed around **Private Cloud** and **Private Network**.
 - **0.3.9** — Settings → General answers "am I up to date?" directly, and removes 0.3.8's
   usage-limit guard that never released held agents.
@@ -559,10 +558,10 @@ Full notes in the [CHANGELOG](https://github.com/chaitanyagiri/munder-difflin/bl
 ---
 
 ## Links
-[Website](https://munderdiffl.in/) ·
+[Website](https://talhashams.me/) ·
 [Repo](https://github.com/chaitanyagiri/munder-difflin) ·
 [Issues](https://github.com/chaitanyagiri/munder-difflin/issues) ·
 [Contribute](https://github.com/chaitanyagiri/munder-difflin/blob/main/CONTRIBUTING.md) ·
 [Become a patron](https://razorpay.me/@munderdifflinfund)
 
-MIT-licensed. An affectionate parody — not affiliated with NBC's *The Office* or Dunder Mifflin.
+Source-available. An affectionate parody — not affiliated with NBC's *The Office* or Dunder Mifflin.

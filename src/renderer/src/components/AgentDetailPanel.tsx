@@ -40,7 +40,7 @@ export function AgentDetailPanel({ agent }: AgentDetailPanelProps) {
 
   const onPtyStream = usePtyParser(agent.id);
 
-  // Aria gets the full command-center dashboard instead of the plain panel.
+  // Bro gets the full command-center dashboard instead of the plain panel.
   if (agent.isGod) return <CommandCenterPanel agent={agent} />;
 
   const openTerminal = async () => {

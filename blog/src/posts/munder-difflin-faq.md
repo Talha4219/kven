@@ -13,9 +13,9 @@ author:
   initials: CG
 faq:
   - q: "What is Munder Difflin?"
-    a: "Munder Difflin is a local, open-source desktop app that turns the Claude Code terminals you already run into a self-coordinating hive of agents — with shared long-term memory, inter-agent messaging, and a GOD orchestrator you talk to."
+    a: "Munder Difflin is a local, source-available desktop app that turns the Claude Code terminals you already run into a self-coordinating hive of agents — with shared long-term memory, inter-agent messaging, and a GOD orchestrator you talk to."
   - q: "Is Munder Difflin free?"
-    a: "Yes. Munder Difflin is free and open source under the MIT license. You can download a build or run it from source — there's no paid tier to unlock the core."
+    a: "Yes. Munder Difflin is free and source-available. You can download a build or run it from source — there's no paid tier to unlock the core."
   - q: "Does it run my data or code in the cloud?"
     a: "No. Munder Difflin is local-first — the harness, agents, and memory all live on your own machine. Your Claude Code sessions talk to Anthropic the same way they already do; Munder Difflin itself doesn't ship your code anywhere."
   - q: "What platforms does Munder Difflin support?"
@@ -33,9 +33,9 @@ faq:
   - q: "Does Munder Difflin work with my existing Claude Code setup, MCP servers, and skills?"
     a: "Yes. It coordinates the Claude Code you already run, including your tools, MCP servers, and skills — it adds a coordination layer rather than replacing your setup."
   - q: "Is Munder Difflin affiliated with Dunder Mifflin or The Office?"
-    a: "No. The name is an affectionate parody — 'the world's best agents, the world's worst paper company.' It's an independent open-source project, not affiliated with NBC or The Office."
+    a: "No. The name is an affectionate parody — 'the world's best agents, the world's worst paper company.' It's an independent source-available project, not affiliated with NBC or The Office."
   - q: "Where do I download Munder Difflin?"
-    a: "From the install section on munderdiffl.in, which links to the latest release. It's free, open source, and available for macOS, Windows, and Linux."
+    a: "From the install section on talhashams.me, which links to the latest release. It's free, source-available, and available for macOS, Windows, and Linux."
   - q: "Does Munder Difflin show how much each agent is costing me?"
     a: "Yes, as of v0.1.6. The Activity tab in Michael's Command Center reads your local Claude Code transcript files and surfaces real token counts (input, output, cache) and estimated USD cost per agent. No external service — it reads the same files Claude Code already writes to your machine."
   - q: "Can agents work in parallel on the same repo without colliding?"
@@ -43,7 +43,7 @@ faq:
 ---
 
 <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Munder Difflin</strong> is a free,
-open-source (MIT), local-first desktop app that turns the Claude Code terminals you already run into a
+source-available, local-first desktop app that turns the Claude Code terminals you already run into a
 coordinated hive — shared memory, messaging, and a <a href="/#how">GOD orchestrator</a> you talk to — on macOS,
 Windows, and Linux. The full answers to the questions people ask most are below.</p></div>
 
@@ -71,4 +71,4 @@ If you're comparing options, these go deeper than an FAQ can:
 ---
 
 The fastest way to answer "is this for me?" is to run it. [Download Munder Difflin](/#install) — it's
-free, open source, and local-first.
+free, source-available, and local-first.

@@ -68,7 +68,7 @@ Adding a shared brain to a team of agents is a bigger shift than it sounds:
 
 Layer messaging and an orchestrator on top of that memory and you've crossed from "parallel sessions"
 to a [multi-agent harness](/#what): agents with roles and mailboxes, a [GOD orchestrator](/#how) that
-routes work, and a visual office floor. That's [Munder Difflin](/#what) — open source (MIT), local-first,
+routes work, and a visual office floor. That's [Munder Difflin](/#what) — source-available, local-first,
 on macOS, Windows, and Linux.
 
 ## Crystal vs a memory-backed hive

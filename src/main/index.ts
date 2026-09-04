@@ -255,7 +255,7 @@ const breaker = new CircuitBreaker(() => {
   return { ...(c.circuitBreaker ?? {}), costCapUsd: c.costCapUsd, costCapTokens: c.costCapTokens, agentTokenCaps: c.agentTokenCaps };
 });
 // Always-on beats (decoupled from the optional heartbeat): the live fleet snapshot
-// Aria reads + the breaker beat, so guardrails + monitoring work even when the
+// Bro reads + the breaker beat, so guardrails + monitoring work even when the
 // heartbeat mission is disabled (it ships off).
 let fleetTimer: ReturnType<typeof setInterval> | null = null;
 let breakerBeatTimer: ReturnType<typeof setInterval> | null = null;
@@ -1106,7 +1106,7 @@ function runBreakerBeat(progressWindowMs: number): void {
   }
 }
 
-/** Build + write the live fleet snapshot Aria reads (`<hive>/fleet.json`).
+/** Build + write the live fleet snapshot Bro reads (`<hive>/fleet.json`).
  *  Always-on (independent of the heartbeat) since `claude agents` can't see the
  *  hive's sibling sessions. PII-free; never throws (called from a timer). */
 function writeFleetSnapshot(): void {
@@ -1194,7 +1194,7 @@ function liveWebContents(): Electron.WebContents | null {
   return null;
 }
 
-// ─── Slack webhook server (Slack message → Aria's queue) ──────────────────
+// ─── Slack webhook server (Slack message → Bro's queue) ──────────────────
 /** The running Slack ingestion server, or null when disabled/stopped. */
 let slackServer: SlackWebhookServer | null = null;
 /** The loopback-only reply endpoint (lets the bundled helper post back to Slack
@@ -1220,7 +1220,7 @@ function buildAutonomousRequestProtocol(channel: string, threadTs: string, helpe
 2. DELEGATE WITH THE REPLY HANDLE — tell that agent to do the work autonomously AND to post its result back to THIS Slack thread itself when done, using exactly: "${hive.nodeCommand()}" "${helperPath}" --channel ${channel} --thread ${threadTs} --text "<substantive result>" (that first path is the harness's bundled Node, already resolved for this machine — pass it verbatim; bare "node" is not on the hook/agent PATH on many machines.)
 3. AUTONOMOUS EXECUTION — no interactive questions. PAUSE/ask ONLY for high-severity actions: pushing to main or any remote; buying or spawning infrastructure or paid services; deleting an existing repo, file, or folder it did not create. Stay READ-ONLY at critical infrastructure and git-push-type changes unless explicitly approved.
 4. DIRECT, SUBSTANTIVE REPLY — the agent posts a real Slack-mrkdwn answer (short *bold* headline + the actual outcome/specifics/links), NEVER a bare "done"/":white_check_mark:".
-5. REPORT TO GOD — the agent then tells you (Aria) what it did.
+5. REPORT TO GOD — the agent then tells you (Bro) what it did.
 6. ASYNC QUESTIONS — if a decision is genuinely needed, don't block: post the question + numbered OPTIONS to the thread via that reply command, and record {q, options, askedAt (ISO + day & time), thread_ts ${threadTs}} so the threaded human reply correlates back and resumes.
 The user's message starts now: `;
 }
@@ -1255,7 +1255,7 @@ function slackReplyScriptPath(): string {
 
 /** W3 — the bundled read-only `skills/` source dir copied into each agent's
  *  `.claude/skills/` at spawn. Same packaged/dev resolution as the helpers above.
- *  Tolerated-missing until lp-manifest (Choto) populates it (the hive copy is a
+ *  Tolerated-missing until lp-manifest (Bro) populates it (the hive copy is a
  *  no-op on an absent dir). */
 function skillsResourceDir(): string {
   return app.isPackaged
@@ -2148,7 +2148,7 @@ function createWindow(opts: { floor?: boolean } = {}): BrowserWindow {
   // Permission gate for the renderer (our own trusted, local content). The only
   // permission we constrain is microphone capture: it's allowed ONLY while a mic
   // feature is actually live — Free Flow dictation (`freeflowEnabled`) OR a
-  // Realtime Aria voice session (`realtimeVoiceEnabled`, flipped on by the
+  // Realtime Bro voice session (`realtimeVoiceEnabled`, flipped on by the
   // session at start() before getUserMedia, off at stop()). With both flags off,
   // there's zero mic access even at the Electron layer. We deliberately do NOT
   // gate on OpenAI-key presence: that key (`apikey:openai`) is shared with the CLI
@@ -2586,7 +2586,7 @@ async function spawnAgentCore(opts: AgentSpawnOptions, owner: Electron.WebConten
         : cfg.defaultModel ?? modelForRole(opts.hive, cfg);
       if (m) args.push('--model', m);
     }
-    // Name the Remote Control session after the agent (Aria, Rowan, Dev1…) so it
+    // Name the Remote Control session after the agent (Bro, Rowan, Dev1…) so it
     // is identifiable in claude.ai / the mobile app. Otherwise Claude defaults the
     // prefix to the machine hostname (e.g. "vyapaks-macbook-pro-…"), which is
     // opaque when several agents run at once — especially with remoteControlAtStartup
@@ -3480,7 +3480,7 @@ ipcMain.handle('app:resetAll', () => {
   try { reflector.stop(); } catch (e) { console.error('[reset] reflector.stop:', e); }
   try { persist.close(); } catch (e) { console.error('[reset] persist.close:', e); }
   try { ptyManager.killAll(); } catch (e) { console.error('[reset] killAll:', e); }
-  // Erase the hive (Aria's + every agent's memory, inboxes, tasks, board,
+  // Erase the hive (Bro's + every agent's memory, inboxes, tasks, board,
   // git history) and the semantic-memory palace. Only these harness-created
   // subdirs are removed — never the user's whole harnessHome folder.
   for (const dir of [hive.root(), memory.palacePath()]) {
@@ -3519,12 +3519,12 @@ ipcMain.handle('hive:agentContext', (_evt, agentId: unknown) => {
 });
 
 // A consolidated, NON-SENSITIVE per-agent directory for the voice read-layer
-// (Realtime Aria's get_agent_detail / list_agents). One read that joins
+// (Realtime Bro's get_agent_detail / list_agents). One read that joins
 // everything the office-floor sidebar + telemetry know per agent: the registry
 // record (name/role/provider/cwd/status/archived/isGod/isAssistant/sessionId/
 // cwdValid), live token + breaker + last-tool telemetry, and the current context
 // window fill. Includes ARCHIVED agents (unlike the heartbeat's fleet.json, which
-// is live-only) so Aria can speak to inactive agents — their cwd and memory
+// is live-only) so Bro can speak to inactive agents — their cwd and memory
 // stay reachable. PII-free: no secrets, env, or API keys ever leave main; cost is
 // carried as tokens (+ a usd field the voice layer deliberately never speaks).
 ipcMain.handle('hive:agentDirectory', () => {
@@ -4032,32 +4032,32 @@ ipcMain.handle('freeflow:transcribe', async (_evt, arg: unknown) => {
   return out;
 });
 
-// ─── IPC: Realtime Aria (voice orchestrator — ephemeral token mint, rt-1) ──
+// ─── IPC: Realtime Bro (voice orchestrator — ephemeral token mint, rt-1) ──
 // MAIN owns the BYOK OpenAI key (encrypted broker, apikey:openai) and mints a
 // short-lived EPHEMERAL client secret; the real key never crosses IPC. All wiring
 // lives in ./realtime so this stays a single registration line.
 registerRealtimeIpc();
 
-// ─── IPC: Realtime Aria voice ACTIONS (rt-5, Phase 2) ─────────────────────
+// ─── IPC: Realtime Bro voice ACTIONS (rt-5, Phase 2) ─────────────────────
 // Thin adapters over the SAME main fns the god PTY already uses. ALL of the safety
 // spine — soft-vs-destructive tiering, the two-step verbal echo-back confirm, the
 // distinct-token rule, the hard allowlist (kill-god / mass-ops forbidden), and the
-// aria-voice attribution — lives in ./realtimeActions. This site only injects
+// bro-voice attribution — lives in ./realtimeActions. This site only injects
 // the existing functions; it adds NO new orchestration logic.
-// ─── IPC: Realtime Aria completion watcher (rt-12, Phase 2) ───────────────
+// ─── IPC: Realtime Bro completion watcher (rt-12, Phase 2) ───────────────
 // Reyyan's net-new engine (realtimeCompletionWatcher.ts) detects a voice-dispatched
-// task finishing (card→done OR a done-reply in aria-voice's inbox) and EMITS it;
+// task finishing (card→done OR a done-reply in bro-voice's inbox) and EMITS it;
 // I own the seam — inject the hive read deps, push completions to the live session
-// (so Aria speaks them unprompted), and bridge waitFor / queue-drain over IPC.
+// (so Bro speaks them unprompted), and bridge waitFor / queue-drain over IPC.
 const completionWatcher = initCompletionWatcher({
   readTasks: () => { const t = hive.tasks() as { tasks?: TaskCard[] }; return Array.isArray(t?.tasks) ? t.tasks : []; },
-  // Voice dispatches go out as from:aria-voice, so assignee done-replies land here.
+  // Voice dispatches go out as from:bro-voice, so assignee done-replies land here.
   readInbox: () => {
-    // Voice dispatches go out from:aria-voice, so done-replies normally land in its
+    // Voice dispatches go out from:bro-voice, so done-replies normally land in its
     // inbox — but an assignee may address god out of habit. Merge both inboxes (de-dupe
     // by id) so a god-addressed completion isn't missed; the detector filters by sender.
     try {
-      const mv = hive.inbox('aria-voice') as unknown as InboxMessage[];
+      const mv = hive.inbox('bro-voice') as unknown as InboxMessage[];
       const godId = hive.registry().godId;
       const god = godId ? (hive.inbox(godId) as unknown as InboxMessage[]) : [];
       const seen = new Set<string>();
@@ -4066,7 +4066,7 @@ const completionWatcher = initCompletionWatcher({
       return [];
     }
   },
-  onNotify: (evt) => { try { if (Notification.isSupported()) new Notification({ title: 'Aria', body: evt.summary }).show(); } catch { /* best-effort */ } }
+  onNotify: (evt) => { try { if (Notification.isSupported()) new Notification({ title: 'Bro', body: evt.summary }).show(); } catch { /* best-effort */ } }
 });
 
 registerRealtimeActionIpc({
@@ -4624,7 +4624,7 @@ function bootstrapHiveServices(): void {
 }
 
 /** (Re)arm the always-on beats (decoupled from the optional heartbeat): the live
- *  fleet snapshot Aria reads (~8s) + the breaker/cost-ledger beat (~30s).
+ *  fleet snapshot Bro reads (~8s) + the breaker/cost-ledger beat (~30s).
  *  Guarded (clear-then-set) so a re-bootstrap (changeHome recovery) OR a
  *  powerMonitor resume can't stack duplicate timers — these are setInterval
  *  handles that freeze during true system sleep and must be re-armed on wake. */
@@ -4718,7 +4718,7 @@ function onSystemResume(reason: string): void {
 }
 
 app.whenReady().then(() => {
-  // Realtime Aria mic-gate hygiene (rt-8 / Ates rt-10 nit): the voice session
+  // Realtime Bro mic-gate hygiene (rt-8 / Ates rt-10 nit): the voice session
   // opens the mic permission gate by persisting realtimeVoiceEnabled=true and
   // closes it on disconnect — but a hard crash/reload mid-session skips that
   // teardown, leaving the flag stuck true so the gate would boot PRE-OPEN with no

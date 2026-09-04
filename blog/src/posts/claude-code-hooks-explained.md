@@ -180,7 +180,7 @@ elsewhere.
 
 ---
 
-Munder Difflin turns Claude Code's hook lifecycle into [a live, autonomous office](https://munderdiffl.in/#how): real-time avatars
+Munder Difflin turns Claude Code's hook lifecycle into [a live, autonomous office](https://talhashams.me/#how): real-time avatars
 from tool events and a self-draining work loop from the Stop hook — all without editing your repo.
-[Download Munder Difflin](https://munderdiffl.in/#install) to see hooks driving a hive of agents; it's
+[Download Munder Difflin](https://talhashams.me/#install) to see hooks driving a hive of agents; it's
 free and open source.

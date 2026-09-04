@@ -1,11 +1,11 @@
 import { PixelPanel } from '@/components/PixelPanel';
 
 /**
- * Loader shown on the empty floor while the god agent ("Aria") is clocking
+ * Loader shown on the empty floor while the god agent ("Bro") is clocking
  * in on launch. Replaces the "add agent" prompt so a returning user doesn't see
- * the empty-floor call-to-action before Aria has booted.
+ * the empty-floor call-to-action before Bro has booted.
  */
-export function AriaBooting() {
+export function BroBooting() {
   return (
     <div style={{
       position: 'absolute', inset: 0,
@@ -37,7 +37,7 @@ export function AriaBooting() {
               margin: 0, fontSize: 13, lineHeight: '20px', textAlign: 'center',
               color: 'var(--cth-ink-700)'
             }}>
-              Aria is settling into the corner office and getting the floor
+              Bro is settling into the corner office and getting the floor
               ready. Hang tight…
             </p>
           </div>

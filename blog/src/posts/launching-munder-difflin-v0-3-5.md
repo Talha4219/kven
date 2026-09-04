@@ -15,7 +15,7 @@ faq:
   - q: "What's new in Munder Difflin v0.3.5?"
     a: "v0.3.5 is the polish pass on top of the big v0.3.4 wave, so the headline is really both: Michael's talk mode now opens with a live snapshot of every agent and can run nearly the whole app by voice; markdown files preview live in the IDE and open rendered from a ⌘-click in any terminal; the IDE gains a clickable commit history, branch compare, and guarded checkout; Settings was redesigned into six clear tabs; xAI Grok and Kimi Code joined the engine roster; the app now auto-updates from GitHub releases; and v0.3.5 itself fixes the paused-queue dead end with a per-message 'send now' override."
   - q: "Do I need to reinstall to get v0.3.5?"
-    a: "If you're on v0.3.4 — no. This is the first release the app delivers to itself: it downloads in the background and shows a 'Restart to update' toast; installation only ever happens on your click. If you're on v0.3.3 or older there's no updater in your build, so grab v0.3.5 once from munderdiffl.in and you're on the train from then on."
+    a: "If you're on v0.3.4 — no. This is the first release the app delivers to itself: it downloads in the background and shows a 'Restart to update' toast; installation only ever happens on your click. If you're on v0.3.3 or older there's no updater in your build, so grab v0.3.5 once from talhashams.me and you're on the train from then on."
   - q: "What can Michael actually do by voice now?"
     a: "Nearly everything: spawn and archive agents, assign and steer work, resume paused agents, pause or resume floor-wide message delivery, gate specific tools, manage tasks, create schedules, clear an agent's context, and change settings from a strict allowlist. Destructive actions still require you to say a distinct confirm word out loud, secrets can never be touched by voice, and he now answers 'what's everyone doing?' from a live floor snapshot instead of guessing."
   - q: "What does the git time-machine in the IDE do?"
@@ -26,7 +26,7 @@ faq:
     a: "They're complementary answers to the same problem. qm is a multiplayer agent harness for teams — headless, living in Slack and a web UI. Munder Difflin covers the same jobs (security postures, background scheduled work, Slack triggers, shareable skills) as a simpler local-first desktop app, and adds real watchable terminals, voice orchestration, a built-in IDE with git visualization, and auto-update. See our full qm vs Munder Difflin comparison post."
 ---
 
-<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Munder Difflin v0.3.5</strong> caps the biggest release wave we've shipped. <strong>Talk mode grew up</strong>: Michael opens the call already knowing every agent's status and can run nearly the whole app by voice. The IDE became a <strong>git time-machine</strong> — clickable commit history, branch compare, guarded checkout — and <strong>markdown previews</strong> render everywhere agents write them. <strong>Settings got six clear tabs</strong>, <strong>xAI Grok and Kimi Code</strong> joined the engine roster, the whole app got a <strong>professional type-and-color pass with full dark mode</strong> — and from v0.3.4 onward, <strong>the app updates itself</strong>. Free, MIT-licensed, local-first.</p></div>
+<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Munder Difflin v0.3.5</strong> caps the biggest release wave we've shipped. <strong>Talk mode grew up</strong>: Michael opens the call already knowing every agent's status and can run nearly the whole app by voice. The IDE became a <strong>git time-machine</strong> — clickable commit history, branch compare, guarded checkout — and <strong>markdown previews</strong> render everywhere agents write them. <strong>Settings got six clear tabs</strong>, <strong>xAI Grok and Kimi Code</strong> joined the engine roster, the whole app got a <strong>professional type-and-color pass with full dark mode</strong> — and from v0.3.4 onward, <strong>the app updates itself</strong>. Free, source-available, local-first.</p></div>
 
 This is a double-feature post: v0.3.4 shipped the features, v0.3.5 shipped the polish a day
 later, and if you're installing fresh you get both at once. A huge part of this wave is
@@ -115,7 +115,7 @@ do that a headless harness can't: real terminals, voice, an IDE, auto-update. We
 
 **[Download v0.3.5](https://github.com/chaitanyagiri/munder-difflin/releases/latest)** for
 macOS, Windows, or Linux — or clone and `npm run dev`. On v0.3.4? Do nothing — the update
-toast will find you. Free, MIT-licensed, local-first.
+toast will find you. Free, source-available, local-first.
 
 If Munder Difflin is useful to you, a
 [star on GitHub](https://github.com/chaitanyagiri/munder-difflin) is the single biggest way

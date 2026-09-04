@@ -21,7 +21,7 @@ faq:
   - q: "Does qm have voice control, an IDE, or git visualization?"
     a: "Not as of this writing. qm's interfaces are Slack and a web UI. Munder Difflin ships realtime voice orchestration (a talking Michael with live floor context), a built-in Monaco IDE with commit history, branch compare and side-by-side diffs, markdown previews, real watchable terminals, and auto-update."
   - q: "Which one should I use?"
-    a: "Use qm if your whole team wants one shared harness in Slack with org-level admin control. Use Munder Difflin if you want your agent office on your own machine — watchable, local-first, with voice and an IDE — riding the CLI subscriptions you already pay for. Both are MIT-licensed; some teams will genuinely want both: qm as the shared org layer, Munder Difflin as the personal floor."
+    a: "Use qm if your whole team wants one shared harness in Slack with org-level admin control. Use Munder Difflin if you want your agent office on your own machine — watchable, local-first, with voice and an IDE — riding the CLI subscriptions you already pay for. qm is MIT-licensed; Munder Difflin is source-available. Some teams will genuinely want both: qm as the shared org layer, Munder Difflin as the personal floor."
   - q: "Is Munder Difflin older than qm?"
     a: "Munder Difflin has been shipping public releases since v0.2.0 in mid-2026 and is on v0.3.5 with a stable auto-updating release train, while qm is a newer project that grew popular quickly. Popularity and maturity are different axes — evaluate both against your workflow."
 ---
@@ -32,7 +32,7 @@ UI</strong>, great when a whole team shares one fleet. <strong>Munder Difflin</s
 the same idea grown from the other end: a <strong>local-first desktop office</strong> where
 every agent is a real CLI process in a terminal you can watch, with <strong>voice
 orchestration, a built-in IDE with git history, and auto-update</strong> — things a
-headless harness doesn't have. Same jobs, opposite ends of the wire. Both MIT-licensed.</p></div>
+headless harness doesn't have. Same jobs, opposite ends of the wire. qm is MIT-licensed; Munder Difflin is source-available.</p></div>
 
 [qm](https://github.com/yc-software/qm) earned its stars fast — "a multiplayer agent
 harness for work, in Slack and on the web" is a great pitch, and Y Combinator shipping
@@ -66,7 +66,7 @@ If you map the concepts across, most of qm's vocabulary has a Munder Difflin cou
 | Reusable behaviors | Shared skills with scoped permissions | Agent Gallery roles + shareable agent recipes |
 | Reach it from anywhere | Slack + web UI | Slack + Remote Control from your phone |
 | Isolation | Isolated workspaces per employee | Isolated git worktrees per agent |
-| License | MIT | MIT |
+| License | MIT | Source-available |
 
 ## What each has that the other doesn't
 
@@ -107,6 +107,6 @@ Facts about qm above come from its public README as of August 2026 — check
 [the repo](https://github.com/yc-software/qm) for the current state, because both projects
 move fast.
 
-**[Try Munder Difflin free](https://munderdiffl.in/)** — macOS, Windows, Linux, MIT-licensed.
+**[Try Munder Difflin free](https://talhashams.me/)** — macOS, Windows, Linux, source-available.
 And if this comparison helped, a [GitHub star](https://github.com/chaitanyagiri/munder-difflin)
 helps more people find it.

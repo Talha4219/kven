@@ -72,7 +72,7 @@ routes the work.
   — the state is observed, not curated.
 
 That's [Munder Difflin](/#what): a [multi-agent harness](/#what) built around an orchestrator, shared
-memory, and messaging, visualized as a watchable floor. Open source (MIT), local-first, on macOS,
+memory, and messaging, visualized as a watchable floor. Source-available, local-first, on macOS,
 Windows, and Linux.
 
 ## Board or hive? How to choose
@@ -92,4 +92,4 @@ criteria-based [orchestration tools comparison](/blog/claude-code-orchestration-
 > on its own terms; Munder Difflin is our own project.
 
 If you'd rather orchestrate than administrate, [download Munder Difflin](/#install) and let the
-routing happen for you — free and open source.
+routing happen for you — free and source-available.

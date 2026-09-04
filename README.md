@@ -6,7 +6,7 @@
 
 ### An agent harness to run an office of your clones
 
-**Free, open source and performant** — a multi-agent harness that works with the
+**Free, source-available and performant** — a multi-agent harness that works with the
 subscriptions you already pay for, on their hourly limits. It turns the terminal coding CLI
 you already run into a clone of you, one that keeps working while you're away and
 coordinates a whole office of agents on your own machine.
@@ -22,7 +22,6 @@ visualized as avatars at work on a shared office floor.
 </p>
 
 <p>
-  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-9482D3.svg?style=flat-square&labelColor=241B2E"></a>
   <a href="./CHANGELOG.md"><img alt="Version: 0.4.4" src="https://img.shields.io/badge/version-0.4.4-9482D3.svg?style=flat-square&labelColor=241B2E"></a>
   <img alt="Status: prototype" src="https://img.shields.io/badge/status-working%20prototype-F4F1EA.svg?style=flat-square&labelColor=241B2E">
   <img alt="Platform: macOS | Windows | Linux" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-F4F1EA.svg?style=flat-square&labelColor=241B2E">
@@ -63,7 +62,7 @@ visualized as avatars at work on a shared office floor.
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Telemetry](#telemetry)
-- [License](#license)
+- [Copyright](#copyright)
 - [Acknowledgements](#acknowledgements)
 
 ## What it is
@@ -322,7 +321,7 @@ guarantees, and the three ways to opt out (Settings toggle, `DO_NOT_TRACK`, or b
 source — forks compile with no key and send nothing) are documented in
 [`TELEMETRY.md`](./TELEMETRY.md).
 
-## License
+## Copyright
 
 > [!IMPORTANT]
 > **Asset licensing.** The bundled pixel art (tilesets, maps, and the base character sheets the
@@ -332,9 +331,9 @@ source — forks compile with no key and send nothing) are documented in
 > [`src/renderer/src/assets/ATTRIBUTION.md`](./src/renderer/src/assets/ATTRIBUTION.md). **To
 > commercialize, replace these assets or obtain a paid LimeZu license.**
 
-The **source code** is licensed under the **MIT License** — see [`LICENSE`](./LICENSE). The MIT grant
-covers the code only; the non-commercial asset restriction above is carved out in the `LICENSE` scope
-note.
+**Copyright © 2026 [Talha4219](https://github.com/Talha4219). All rights reserved.** Kven is built
+and maintained by Talha4219. No part of this software may be reproduced, distributed, or
+transmitted in any form without prior written permission from the copyright holder.
 
 ## Acknowledgements
 

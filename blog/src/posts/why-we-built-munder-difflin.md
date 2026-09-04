@@ -68,12 +68,12 @@ And the joke that became the name: *the world's best agents, the world's worst p
 office metaphor isn't decoration — it turned out to be the clearest way to think about (and watch) a
 team of coordinating agents.
 
-## Why local, why open source
+## Why local, why source-available
 
 Two decisions were never really in question. **Local-first**, because agents that touch your whole
 codebase shouldn't ship your code and memory to someone else's cloud — you keep the control, the
 privacy, and the predictable cost ([the full case](/blog/why-local-first-matters-for-ai-agents/)).
-And **open source (MIT)**, because a tool you run against your own code is one you should be able to
+And **source-available**, because a tool you run against your own code is one you should be able to
 read, trust, and extend. The code lives on
 [GitHub](https://github.com/chaitanyagiri/munder-difflin).
 
@@ -89,4 +89,4 @@ the [Munder Difflin FAQ](/blog/munder-difflin-faq/).
 ---
 
 We built it to scratch our own itch, then made it free for everyone with the same one. [Download
-Munder Difflin](/#install) — it's open source and local-first, on macOS, Windows, and Linux.
+Munder Difflin](/#install) — it's source-available and local-first, on macOS, Windows, and Linux.

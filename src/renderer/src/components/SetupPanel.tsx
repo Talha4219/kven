@@ -10,7 +10,7 @@
  * tool actually buys you.
  *
  * The primary action delegates rather than executes: installing software touches
- * the user's machine and can need a password, so the button SEEDS Aria's
+ * the user's machine and can need a password, so the button SEEDS Bro's
  * dispatch box with an exact, verified-by-him contract instead of shelling out
  * from the renderer. The user still presses dispatch. That keeps a real
  * confirmation step in front of anything that writes outside the app.
@@ -127,7 +127,7 @@ export function SetupPanel({ onDone }: { onDone?: () => void } = {}) {
   }, []);
   useEffect(() => { void refresh(); }, [refresh]);
 
-  // Only ESSENTIALS are handed to Aria. Installing all eight engine CLIs
+  // Only ESSENTIALS are handed to Bro. Installing all eight engine CLIs
   // because they happen to be listed would be a wild overreach of one click.
   const missingEssential = useMemo(
     () => (tools ?? []).filter((t) => !t.found && t.essential),
@@ -169,7 +169,7 @@ export function SetupPanel({ onDone }: { onDone?: () => void } = {}) {
       }}>
         <div style={{ flex: 1, minWidth: 220, fontSize: 12, color: 'var(--cth-ink-700)', lineHeight: 1.5 }}>
           {missingEssential.length
-            ? <>Aria can install the {missingEssential.length} missing recommended {missingEssential.length === 1 ? 'tool' : 'tools'} for you. This fills in his dispatch box — nothing runs until you press dispatch.</>
+            ? <>Bro can install the {missingEssential.length} missing recommended {missingEssential.length === 1 ? 'tool' : 'tools'} for you. This fills in his dispatch box — nothing runs until you press dispatch.</>
             : <>Everything recommended is installed. Individual engines above are optional — set up only the ones you use.</>}
         </div>
         <PixelButton
@@ -179,7 +179,7 @@ export function SetupPanel({ onDone }: { onDone?: () => void } = {}) {
           disabled={missingEssential.length === 0}
         >
           <span style={{ display: 'inline-flex', gap: 4, alignItems: 'center' }}>
-            <Icon name="sparkle" /> ask Aria to set up everything
+            <Icon name="sparkle" /> ask Bro to set up everything
           </span>
         </PixelButton>
       </div>

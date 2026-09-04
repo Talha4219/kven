@@ -90,7 +90,7 @@ For everything else in the release — including the built-in Monaco IDE — see
 
 ## Try both on one floor
 
-Hire a Claude worker and a Copilot worker side by side and watch the difference yourself — [download Munder Difflin](https://github.com/chaitanyagiri/munder-difflin/releases/latest) (free, MIT, local-first), and if it's useful, [a GitHub star](https://github.com/chaitanyagiri/munder-difflin) helps more people find it.
+Hire a Claude worker and a Copilot worker side by side and watch the difference yourself — [download Munder Difflin](https://github.com/chaitanyagiri/munder-difflin/releases/latest) (free, source-available, local-first), and if it's useful, [a GitHub star](https://github.com/chaitanyagiri/munder-difflin) helps more people find it.
 
 Sources: [GitHub Docs — Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference);
 [GitHub Docs — Running Copilot CLI programmatically](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically);

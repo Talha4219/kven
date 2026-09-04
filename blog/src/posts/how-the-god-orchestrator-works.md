@@ -184,6 +184,6 @@ another `claude` process — a special one.
 
 ---
 
-Munder Difflin's [GOD orchestrator](https://munderdiffl.in/#how) routes, adjudicates, and escalates for a whole hive of Claude Code
-agents — on your own machine, with a full audit trail. [Download Munder Difflin](https://munderdiffl.in/#install)
+Munder Difflin's [GOD orchestrator](https://talhashams.me/#how) routes, adjudicates, and escalates for a whole hive of Claude Code
+agents — on your own machine, with a full audit trail. [Download Munder Difflin](https://talhashams.me/#install)
 to put one in charge of your floor; it's free and open source.

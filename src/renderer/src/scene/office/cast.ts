@@ -10,9 +10,9 @@ import { Texture } from 'pixi.js';
 import { paintPortrait, sceneFrameBufs, SCENE_W, SCENE_H } from './portraitArt';
 
 export type OfficeCharacterName =
-  | 'aria' | 'rowan' | 'sage' | 'milo' | 'bo'
-  | 'iris' | 'noor' | 'caleb' | 'wren' | 'theo'
-  | 'mia' | 'finn' | 'ezra' | 'rex' | 'hazel';
+  | 'bro' | 'ates' | 'cemal' | 'baran' | 'emir'
+  | 'irsoo' | 'noor' | 'taha' | 'talha' | 'ahmad'
+  | 'saad' | 'turab' | 'ezra' | 'rex' | 'hazel';
 
 export interface CastMember {
   name: OfficeCharacterName;
@@ -25,18 +25,18 @@ export interface CastMember {
 
 /** Selectable roster, in display order. */
 export const OFFICE_CAST: CastMember[] = [
-  { name: 'aria',   displayName: 'Aria',   shirt: '#5a6b8c', blurb: 'Orchestrator' },
-  { name: 'rowan',  displayName: 'Rowan',  shirt: '#6fa8dc', blurb: 'Engineer' },
-  { name: 'sage',   displayName: 'Sage',   shirt: '#9caf88', blurb: 'Docs & design' },
-  { name: 'milo',   displayName: 'Milo',   shirt: '#b89b3e', blurb: 'Code review' },
-  { name: 'bo',     displayName: 'Bo',     shirt: '#4a7ab5', blurb: 'Accounting' },
-  { name: 'iris',   displayName: 'Iris',   shirt: '#8a86a6', blurb: 'Operations' },
+  { name: 'bro',   displayName: 'Bro',   shirt: '#5a6b8c', blurb: 'Orchestrator' },
+  { name: 'ates',  displayName: 'Ates',  shirt: '#6fa8dc', blurb: 'Engineer' },
+  { name: 'cemal',   displayName: 'Cemal',   shirt: '#9caf88', blurb: 'Docs & design' },
+  { name: 'baran',   displayName: 'Baran',   shirt: '#b89b3e', blurb: 'Code review' },
+  { name: 'emir',     displayName: 'Emir',     shirt: '#4a7ab5', blurb: 'Accounting' },
+  { name: 'irsoo',   displayName: 'Irsoo',   shirt: '#8a86a6', blurb: 'Operations' },
   { name: 'noor',   displayName: 'Noor',   shirt: '#7a4b6b', blurb: 'Data & analytics' },
-  { name: 'caleb',  displayName: 'Caleb',  shirt: '#8c5a4b', blurb: 'Support' },
-  { name: 'wren',   displayName: 'Wren',   shirt: '#b08bbf', blurb: 'Writing' },
-  { name: 'theo',   displayName: 'Theo',   shirt: '#6fae6f', blurb: 'Growth' },
-  { name: 'mia',    displayName: 'Mia',    shirt: '#d16ba5', blurb: 'Community' },
-  { name: 'finn',   displayName: 'Finn',   shirt: '#3a3a44', blurb: 'Intern' },
+  { name: 'taha',  displayName: 'Taha',  shirt: '#8c5a4b', blurb: 'Support' },
+  { name: 'talha',   displayName: 'Talha',   shirt: '#b08bbf', blurb: 'Writing' },
+  { name: 'ahmad',   displayName: 'Ahmad',   shirt: '#6fae6f', blurb: 'Growth' },
+  { name: 'saad',    displayName: 'Saad',    shirt: '#d16ba5', blurb: 'Community' },
+  { name: 'turab',   displayName: 'Turab',   shirt: '#3a3a44', blurb: 'Intern' },
   { name: 'ezra',   displayName: 'Ezra',   shirt: '#9a8c5a', blurb: 'People ops' },
   { name: 'rex',    displayName: 'Rex',    shirt: '#6b7a4b', blurb: 'Security' },
   { name: 'hazel',  displayName: 'Hazel',  shirt: '#b5544a', blurb: 'Vendors' },
@@ -45,7 +45,7 @@ export const OFFICE_CAST: CastMember[] = [
 export const CAST_BY_NAME: Record<OfficeCharacterName, CastMember> =
   Object.fromEntries(OFFICE_CAST.map((c) => [c.name, c])) as Record<OfficeCharacterName, CastMember>;
 
-export const DEFAULT_CHARACTER: OfficeCharacterName = 'rowan';
+export const DEFAULT_CHARACTER: OfficeCharacterName = 'ates';
 
 export function hexToNumber(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);

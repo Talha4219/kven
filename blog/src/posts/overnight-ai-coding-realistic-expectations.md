@@ -135,6 +135,6 @@ If watching that team work (and reading its log) sounds useful, that's exactly w
 
 ---
 
-Munder Difflin is a local, open-source [multi-agent harness](/#why) built for exactly this: agents that
+Munder Difflin is a local, source-available [multi-agent harness](/#why) built for exactly this: agents that
 work on isolated branches, escalate the decisions that matter, and leave a readable trail.
-[Download Munder Difflin](/#install) to run your own overnight team — free and MIT-licensed.
+[Download Munder Difflin](/#install) to run your own overnight team — free and source-available.

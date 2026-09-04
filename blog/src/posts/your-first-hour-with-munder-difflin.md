@@ -81,4 +81,4 @@ Close the laptop. It's local-first, so tomorrow the office is exactly where you 
 
 Install, answer four wizard questions, brief one agent, watch the floor, read one diff, set one schedule — and you've gone from "a CLI in a terminal" to "an office that works while you don't."
 
-[Download Munder Difflin](https://github.com/chaitanyagiri/munder-difflin/releases/latest) — free, MIT-licensed, local-first — and if the first hour earns it, [a GitHub star](https://github.com/chaitanyagiri/munder-difflin) helps more people find it.
+[Download Munder Difflin](https://github.com/chaitanyagiri/munder-difflin/releases/latest) — free, source-available, local-first — and if the first hour earns it, [a GitHub star](https://github.com/chaitanyagiri/munder-difflin) helps more people find it.

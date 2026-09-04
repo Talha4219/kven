@@ -29,7 +29,7 @@
 import { readAgentUsage } from './transcript';
 
 /** One cumulative usage snapshot for an agent. The identical row that Baran
- *  emits, Reyyan (this lane) persists to cost-ledger.jsonl, and Choto (#4) stores
+ *  emits, Reyyan (this lane) persists to cost-ledger.jsonl, and Bro (#4) stores
  *  in the cost_ledger SQLite table — one shape across all three lanes.
  *
  *  🔒 PII-free by construction: the provider's normalize step allowlists only

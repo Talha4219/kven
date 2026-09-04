@@ -91,7 +91,7 @@ there's a CLI agent you want on the floor, [the door is open](https://github.com
 ## Get it
 
 **[Download v0.3.3](https://github.com/chaitanyagiri/munder-difflin/releases/latest)** for macOS,
-Windows, or Linux — or clone and `npm run dev`. Free, MIT-licensed, local-first, and everything
+Windows, or Linux — or clone and `npm run dev`. Free, source-available, local-first, and everything
 from v0.3.2 and earlier — Talk mode, the Agent Gallery, MemPalace memory, the Command Center —
 still ships.
 

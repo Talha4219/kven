@@ -15,7 +15,7 @@ faq:
   - q: "What is the best tool to run multiple Claude Code agents?"
     a: "There's no single best — it depends on what you want. Claude Squad is the leanest terminal option; Conductor is the most polished on macOS; Crystal is a good open-source desktop GUI; vibe-kanban gives you a task board; and Munder Difflin adds shared memory, inter-agent messaging, and a GOD orchestrator so the agents act as one coordinated team."
   - q: "Are these Claude Code multi-agent tools free?"
-    a: "Most are free and several are open source (Claude Squad, Crystal, vibe-kanban, and Munder Difflin are open source; Munder Difflin is MIT-licensed). Conductor is a free, native macOS app. Always check each project's current license and pricing before you commit."
+    a: "Most are free and several are open source (Claude Squad, Crystal, vibe-kanban, and Munder Difflin are open source; Munder Difflin is source-available). Conductor is a free, native macOS app. Always check each project's current license and pricing before you commit."
   - q: "Do I need a multi-agent tool to use Claude Code?"
     a: "No. One Claude Code session handles most tasks. You start wanting a multi-agent tool once you're running three or more sessions at once and the coordination overhead — who's doing what, who knows what, who edits which file — starts costing you time."
 ---
@@ -62,7 +62,7 @@ Most tools live cleanly in one camp. Knowing which camp you need is most of the 
 | Conductor | Native macOS desktop app | Parallel git worktrees | No | No (you assign) | Free, macOS-only |
 | Crystal | Open-source desktop app | Parallel sessions + worktrees | No | No (you assign) | Open source |
 | vibe-kanban | Kanban board for agents | Task cards across agents | No | Board, not auto-routing | Open source |
-| Munder Difflin | Local coordinated hive | Roles + mailboxes + orchestrator | Yes (MemPalace) | Yes (GOD agent) | Open source (MIT) |
+| Munder Difflin | Local coordinated hive | Roles + mailboxes + orchestrator | Yes (MemPalace) | Yes (GOD agent) | Source-available |
 
 The single row that most separates the field is **shared memory + orchestrator**: that's the jump
 from "running agents in parallel" to "running a team."
@@ -137,7 +137,7 @@ it run.
 
 - **Strengths:** it adds the coordination the other tools leave to you — [shared
   memory](/blog/give-claude-code-long-term-memory/), inter-agent messaging, an orchestrator, and
-  visibility. Local-first and MIT-licensed, on macOS, Windows, and Linux.
+  visibility. Local-first and source-available, on macOS, Windows, and Linux.
 - **Where it stops (honestly):** it's a younger project, and the office-floor visualization is
   heavier than a TUI. For one or two quick parallel tasks, a lean session manager is less to think
   about — a hive earns its keep once coordination is the real cost.

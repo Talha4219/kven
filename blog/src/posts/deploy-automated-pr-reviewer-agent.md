@@ -94,7 +94,7 @@ Within those limits, what you get is genuinely useful: a reviewer that never sle
 
 If you maintain a repo with more inbound than time, this is roughly a five-minute setup and zero ongoing babysitting:
 
-1. [Download Munder Difflin](https://munderdiffl.in/#install) — free, open source, local-first, macOS/Windows/Linux.
+1. [Download Munder Difflin](https://talhashams.me/#install) — free, open source, local-first, macOS/Windows/Linux.
 2. Add a CLI agent (`claude`, `codex`, or `agy` — whichever subscription you already have).
 3. Brief the GOD orchestrator with the prompt above, swapping in your repo and your escalation bar.
 4. Leave it running on a second monitor and let new PRs get reviewed on the hour.

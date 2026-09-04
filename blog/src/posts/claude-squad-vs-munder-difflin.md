@@ -17,7 +17,7 @@ faq:
   - q: "Is Munder Difflin heavier than Claude Squad?"
     a: "Yes. Claude Squad is a minimal terminal tool; Munder Difflin is a desktop app with a visual floor and a coordination layer. For one or two quick parallel tasks, Claude Squad is less to think about. For a real team of agents that need to coordinate, Munder Difflin's extra weight earns its keep."
   - q: "Are both free and open source?"
-    a: "Yes — both are open source. Munder Difflin is MIT-licensed and runs on macOS, Windows, and Linux. Always check each project's current license before you rely on it."
+    a: "Yes — both are open source. Munder Difflin is source-available and runs on macOS, Windows, and Linux. Always check each project's current license before you rely on it."
 ---
 
 <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Claude Squad</strong> wins on
@@ -49,7 +49,7 @@ Everything below is detail on that distinction.
 | Footprint | Featherweight | Heavier (GUI + viz) |
 | SSH / remote | Excellent | Local desktop app |
 | Platforms | Terminal (cross-platform) | macOS, Windows, Linux |
-| License | Open source | Open source (MIT) |
+| License | Open source | Source-available |
 
 No row makes one "win" outright — they reflect two philosophies. Claude Squad optimizes for *less*;
 Munder Difflin optimizes for *coordination*.

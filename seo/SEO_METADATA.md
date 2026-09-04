@@ -1,7 +1,7 @@
 # Munder Difflin — SEO & AEO Metadata (Single Source of Truth)
 
 > **Author:** Kevin (SEO strategist) · **Status:** v1 · **Scope:** marketing site
-> (`https://munderdiffl.in/`) **and** the blog (`https://munderdiffl.in/blog/`, GitHub Pages).
+> (`https://talhashams.me/`) **and** the blog (`https://talhashams.me/blog/`, GitHub Pages).
 > **Repo:** `https://github.com/chaitanyagiri/munder-difflin`
 >
 > This file is copy-paste-ready. Titles, descriptions, JSON-LD, robots, and sitemap entries are
@@ -155,12 +155,12 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
 |---|---|
 | Site name | `Munder Difflin` |
 | Legal/org name | `Munder Difflin` (project; affectionate Office parody — not affiliated with NBC/Dunder Mifflin) |
-| Canonical origin | `https://munderdiffl.in` |
+| Canonical origin | `https://talhashams.me` |
 | Default locale | `en_US` |
 | Title template | `%s — Munder Difflin` (home uses full title verbatim, no suffix) |
 | Default `<title>` (home) | `Munder Difflin — Local multi-agent harness for Claude Code` (60 chars) |
-| Default meta description | `Munder Difflin turns the Claude Code terminals you already run into a self-coordinating hive of agents — they message, route, and remember, run by a GOD orchestrator you talk to. Local, open source.` *(trim to ≤155 for tag, see §3 home)* |
-| Brand OG image | `https://munderdiffl.in/media/og.png` (2880×1640, PNG) |
+| Default meta description | `Munder Difflin turns the Claude Code terminals you already run into a self-coordinating hive of agents — they message, route, and remember, run by a GOD orchestrator you talk to. Local, source-available.` *(trim to ≤155 for tag, see §3 home)* |
+| Brand OG image | `https://talhashams.me/media/og.png` (2880×1640, PNG) |
 | Twitter card | `summary_large_image` |
 | Twitter handle | `‹FILL — none currently; omit twitter:site/creator until a handle exists›` |
 | theme-color | `#F5F2E8` |
@@ -177,12 +177,12 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
 > section is ever split into its own page, and they double as the recommended in-page H1/H2 and the
 > anchor descriptions for sitemap/snippet purposes. The blog blocks are live specs for Angela.
 
-### 3.1 Home — `https://munderdiffl.in/`
+### 3.1 Home — `https://talhashams.me/`
 - **title** (≤60): `Munder Difflin — Local multi-agent harness for Claude Code`
-- **description** (≤155): `Run a self-coordinating hive of Claude Code agents that message, route, and remember — orchestrated by a GOD agent you talk to. Local & open source.` *(151)*
-- **canonical:** `https://munderdiffl.in/`
+- **description** (≤155): `Run a self-coordinating hive of Claude Code agents that message, route, and remember — orchestrated by a GOD agent you talk to. Local & source-available.` *(151)*
+- **canonical:** `https://talhashams.me/`
 - **H1:** `Agents that build while you do your thing.` *(keep existing brand hero; SEO carried by title/description + section H2s)*
-- **OG:** `og:title` = `Munder Difflin — multi-agent harness for Claude Code` · `og:description` = `A local hive of Claude Code agents that message, route, and remember — coordinated by a GOD orchestrator you talk to. macOS, Windows & Linux.` · `og:type` = `website` · `og:url` = `https://munderdiffl.in/` · `og:image` = `https://munderdiffl.in/media/og.png`
+- **OG:** `og:title` = `Munder Difflin — multi-agent harness for Claude Code` · `og:description` = `A local hive of Claude Code agents that message, route, and remember — coordinated by a GOD orchestrator you talk to. macOS, Windows & Linux.` · `og:type` = `website` · `og:url` = `https://talhashams.me/` · `og:image` = `https://talhashams.me/media/og.png`
 - **Twitter:** `twitter:card` = `summary_large_image` · `twitter:title` / `twitter:description` mirror OG · `twitter:image` = og.png
 
 > ✅ **APPLIED on `docs/index.html` (2026-06-03):** (1) trimmed the meta description to the ≤155 version above; (2) platform claim kept at all three (macOS, Windows, Linux) per sign-off; (3) added the `SoftwareApplication` + `Organization` + `WebSite` JSON-LD from §4; (4) added `twitter:title` + `twitter:description`; (5) added the blog RSS `<link rel="alternate">`. Additive head-only changes — page structure untouched.
@@ -208,31 +208,31 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
 - **H2:** `Your Claude Code. Just orchestrated.`
 
 ### 3.6 "Open source" — `/#opensource`
-- **(if split) title:** `Open source multi-agent harness (MIT) — Munder Difflin`
-- **description:** `Munder Difflin is built in the open under the MIT license. Read the code, file issues, and contribute on GitHub.`
+- **(if split) title:** `Source-available multi-agent harness — Munder Difflin`
+- **description:** `Munder Difflin is source-available. Read the code, file issues, and contribute on GitHub.`
 - **H2:** `Built in the open, on purpose.`
 
 ### 3.7 Download / Install — `/#install`
 - **(if split) title:** `Download Munder Difflin — free for macOS, Windows, Linux`
-- **description:** `Download Munder Difflin free for macOS, Windows & Linux, or build from source in two commands. Open source, local-first multi-agent harness for Claude Code.`
+- **description:** `Download Munder Difflin free for macOS, Windows & Linux, or build from source in two commands. Source-available, local-first multi-agent harness for Claude Code.`
 - **H2:** `Download, or build from source.`
 - **Note:** this anchor is the target for `munder difflin download`. The download button links to `…/releases/latest`. If a standalone `/download/` page is ever created, give it its own canonical + `SoftwareApplication` JSON-LD.
 
 ### 3.8 Support — `/#support`
 - **H2:** `Keep the office running.` *(star + patron CTAs; no dedicated metadata needed)*
 
-### 3.9 Blog index — `https://munderdiffl.in/blog/`
+### 3.9 Blog index — `https://talhashams.me/blog/`
 - **title** (≤60): `Blog — Munder Difflin` *(or `Multi-agent & Claude Code blog — Munder Difflin`)*
 - **description** (≤155): `Guides, deep dives, and comparisons on running multi-agent Claude Code: orchestration, agent memory, automation, and the tooling landscape.`
-- **canonical:** `https://munderdiffl.in/blog/`
+- **canonical:** `https://talhashams.me/blog/`
 - **H1:** `The Munder Difflin Blog`
 - **OG:** `og:type` = `website` · image = og.png (or a dedicated blog OG) · url = `/blog/`
 - **JSON-LD:** `Blog` + `Breadcrumb` (Home › Blog) — see §4.
 
-### 3.10 Blog post template — `https://munderdiffl.in/blog/<slug>/`
+### 3.10 Blog post template — `https://talhashams.me/blog/<slug>/`
 - **title** (≤60): `‹Post title — keep ≤60; lead with primary keyword›`
 - **description** (≤155): `‹One-sentence answer/benefit with primary keyword; click-driven.›`
-- **canonical:** `https://munderdiffl.in/blog/<slug>/`
+- **canonical:** `https://talhashams.me/blog/<slug>/`
 - **H1:** the post title (exactly one H1)
 - **OG:** `og:type` = `article` · `og:title`/`og:description` per post · `og:image` = per-post hero (1200×630) or fallback og.png · `article:published_time`, `article:modified_time`, `article:author`, `article:tag` per post
 - **Twitter:** `summary_large_image`
@@ -240,8 +240,8 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
 
 ### 3.11 FAQ block (embeddable on home + posts)
 - Use the `FAQPage` JSON-LD in §4. Recommended seed Q&As (AEO-optimized, one-sentence answers):
-  - **What is Munder Difflin?** — "Munder Difflin is a local, open-source desktop app that turns the Claude Code terminals you already run into a self-coordinating hive of agents with shared memory, messaging, and a GOD orchestrator you talk to."
-  - **Is Munder Difflin free?** — "Yes. Munder Difflin is free and open source under the MIT license; you can download a build or run it from source."
+  - **What is Munder Difflin?** — "Munder Difflin is a local, source-available desktop app that turns the Claude Code terminals you already run into a self-coordinating hive of agents with shared memory, messaging, and a GOD orchestrator you talk to."
+  - **Is Munder Difflin free?** — "Yes. Munder Difflin is source-available; you can download a build or run it from source."
   - **Does it run my data in the cloud?** — "No. Munder Difflin is local-first — the harness, agents, and memory live on your own machine."
   - **What platforms does it support?** — "macOS, Windows, and Linux."
   - **Can Claude Code agents talk to each other?** — "Yes. Each agent has a mailbox; the harness router delivers messages between agents, and a GOD orchestrator routes and adjudicates work."
@@ -261,14 +261,14 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Munder Difflin",
-  "description": "Local, open-source multi-agent harness for Claude Code. Turns the Claude Code terminals you already run into a self-coordinating hive of agents with long-term memory, inter-agent messaging, and a GOD orchestrator you talk to.",
-  "url": "https://munderdiffl.in/",
+  "description": "Local, source-available multi-agent harness for Claude Code. Turns the Claude Code terminals you already run into a self-coordinating hive of agents with long-term memory, inter-agent messaging, and a GOD orchestrator you talk to.",
+  "url": "https://talhashams.me/",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "macOS, Windows, Linux",
   "softwareVersion": "0.1.3",
   "downloadUrl": "https://github.com/chaitanyagiri/munder-difflin/releases/latest",
   "softwareHelp": "https://github.com/chaitanyagiri/munder-difflin#readme",
-  "license": "https://github.com/chaitanyagiri/munder-difflin/blob/main/LICENSE",
+  "license": "source-available",
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
@@ -282,10 +282,10 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "publisher": {
     "@type": "Organization",
     "name": "Munder Difflin",
-    "url": "https://munderdiffl.in/"
+    "url": "https://talhashams.me/"
   },
-  "image": "https://munderdiffl.in/media/og.png",
-  "screenshot": "https://munderdiffl.in/media/og.png",
+  "image": "https://talhashams.me/media/og.png",
+  "screenshot": "https://talhashams.me/media/og.png",
   "keywords": "claude code multi-agent, multi-agent harness, claude code orchestration, autonomous coding agents, ai agent memory"
 }
 ```
@@ -298,9 +298,9 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Munder Difflin",
-  "url": "https://munderdiffl.in/",
-  "logo": "https://munderdiffl.in/logo.png",
-  "description": "Open-source local multi-agent harness for Claude Code.",
+  "url": "https://talhashams.me/",
+  "logo": "https://talhashams.me/logo.png",
+  "description": "Source-available local multi-agent harness for Claude Code.",
   "sameAs": [
     "https://github.com/chaitanyagiri/munder-difflin"
   ]
@@ -315,7 +315,7 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Munder Difflin",
-  "url": "https://munderdiffl.in/",
+  "url": "https://talhashams.me/",
   "inLanguage": "en-US"
 }
 ```
@@ -325,10 +325,10 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Munder Difflin",
-  "url": "https://munderdiffl.in/",
+  "url": "https://talhashams.me/",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://munderdiffl.in/blog/?q={search_term_string}",
+    "target": "https://talhashams.me/blog/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -340,12 +340,12 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Munder Difflin Blog",
-  "url": "https://munderdiffl.in/blog/",
+  "url": "https://talhashams.me/blog/",
   "description": "Guides and deep dives on running multi-agent Claude Code: orchestration, agent memory, automation, and tooling.",
   "publisher": {
     "@type": "Organization",
     "name": "Munder Difflin",
-    "logo": { "@type": "ImageObject", "url": "https://munderdiffl.in/logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://talhashams.me/logo.png" }
   }
 }
 ```
@@ -357,18 +357,18 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@type": "BlogPosting",
   "headline": "‹Post title (≤110 chars)›",
   "description": "‹Meta description›",
-  "image": "https://munderdiffl.in/blog/assets/‹slug›-hero.png",
+  "image": "https://talhashams.me/blog/assets/‹slug›-hero.png",
   "datePublished": "‹YYYY-MM-DD›",
   "dateModified": "‹YYYY-MM-DD›",
   "author": { "@type": "Person", "name": "‹Author name›" },
   "publisher": {
     "@type": "Organization",
     "name": "Munder Difflin",
-    "logo": { "@type": "ImageObject", "url": "https://munderdiffl.in/logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://talhashams.me/logo.png" }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://munderdiffl.in/blog/‹slug›/"
+    "@id": "https://talhashams.me/blog/‹slug›/"
   },
   "keywords": "‹primary, secondary keywords›",
   "articleSection": "‹Technical | Guides | Comparisons›",
@@ -399,9 +399,9 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://munderdiffl.in/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://munderdiffl.in/blog/" },
-    { "@type": "ListItem", "position": 3, "name": "‹Post title›", "item": "https://munderdiffl.in/blog/‹slug›/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talhashams.me/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://talhashams.me/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "‹Post title›", "item": "https://talhashams.me/blog/‹slug›/" }
   ]
 }
 ```
@@ -410,7 +410,7 @@ URL key: `/` = home, `#x` = home anchor, `/blog/...` = blog post (see BLOG_IDEAS
 
 ## 5. Technical SEO assets
 
-### 5.1 `robots.txt` — place at `docs/robots.txt` (served at `https://munderdiffl.in/robots.txt`)
+### 5.1 `robots.txt` — place at `docs/robots.txt` (served at `https://talhashams.me/robots.txt`)
 ```
 User-agent: *
 Allow: /
@@ -431,9 +431,9 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://munderdiffl.in/sitemap.xml
+Sitemap: https://talhashams.me/sitemap.xml
 ```
-> Decision rationale: this is an open-source, awareness-stage product whose audience asks LLMs.
+> Decision rationale: this is a source-available, awareness-stage product whose audience asks LLMs.
 > We **allow** AI crawlers on purpose so ChatGPT/Claude/Perplexity can cite Munder Difflin. If the
 > human wants to block training crawlers later, flip `GPTBot`/`Google-Extended`/`ClaudeBot` to
 > `Disallow: /` — note that also reduces citations.
@@ -444,20 +444,20 @@ Single-page site + blog. `<lastmod>` must be updated on real changes (don't fake
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://munderdiffl.in/</loc>
+    <loc>https://talhashams.me/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://munderdiffl.in/blog/</loc>
+    <loc>https://talhashams.me/blog/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- one <url> per published blog post: -->
   <url>
-    <loc>https://munderdiffl.in/blog/how-to-run-multiple-claude-code-agents/</loc>
+    <loc>https://talhashams.me/blog/how-to-run-multiple-claude-code-agents/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -474,14 +474,14 @@ Single-page site + blog. `<lastmod>` must be updated on real changes (don't fake
 ### 5.3 Canonical rules
 - Every page declares exactly one self-referential `<link rel="canonical">` with the **trailing-slash**
   form for directories (`/blog/`, `/blog/<slug>/`).
-- Force one host: `munderdiffl.in` (no `www`). GitHub Pages + the `CNAME` already enforce HTTPS.
+- Force one host: `talhashams.me` (no `www`). GitHub Pages + the `CNAME` already enforce HTTPS.
 - Anchors (`/#how`) are **never** canonicalized separately — they all canonical to `/`.
 - Blog tag/category archive pages (if any) should canonical to themselves but be `noindex` if thin.
 
 ### 5.4 RSS feed plan
-- Serve `https://munderdiffl.in/blog/feed.xml` (Atom or RSS 2.0).
+- Serve `https://talhashams.me/blog/feed.xml` (Atom or RSS 2.0).
 - Link it from `<head>` on every page:
-  `<link rel="alternate" type="application/rss+xml" title="Munder Difflin Blog" href="https://munderdiffl.in/blog/feed.xml">`
+  `<link rel="alternate" type="application/rss+xml" title="Munder Difflin Blog" href="https://talhashams.me/blog/feed.xml">`
 - Include full or generous-excerpt content, `<pubDate>`, `<guid isPermaLink="true">` = post URL.
 - If Jekyll: add `jekyll-feed` (emits `/feed.xml`). Otherwise Angela's build emits it.
 
@@ -516,11 +516,11 @@ Single-page site + blog. `<lastmod>` must be updated on real changes (don't fake
 
 ### 6.1 Repo "About" description (≤350 chars; keyword-led)
 ```
-Local, open-source multi-agent harness for Claude Code. Turn the Claude Code terminals you already run into a self-coordinating hive of agents — with long-term memory, inter-agent messaging, and a GOD orchestrator you talk to. macOS, Windows & Linux. Electron · Pixi.js · xterm.js · node-pty.
+Local, source-available multi-agent harness for Claude Code. Turn the Claude Code terminals you already run into a self-coordinating hive of agents — with long-term memory, inter-agent messaging, and a GOD orchestrator you talk to. macOS, Windows & Linux. Electron · Pixi.js · xterm.js · node-pty.
 ```
 
 ### 6.2 Repo website field
-Set to `https://munderdiffl.in/`.
+Set to `https://talhashams.me/`.
 
 ### 6.3 Recommended GitHub topics (add via repo → ⚙ Topics)
 ```
@@ -533,7 +533,7 @@ ai-orchestration · agent-memory · local-first · developer-tools · hive · mc
 > Keep the brand line, but ensure the **first sentence** contains the head keyword. Suggested:
 
 ```markdown
-**Munder Difflin is a local, open-source multi-agent harness for [Claude Code](https://claude.com/claude-code).**
+**Munder Difflin is a local, source-available multi-agent harness for [Claude Code](https://claude.com/claude-code).**
 It turns the Claude Code terminal sessions you already run into a self-coordinating **hive of
 autonomous agents** — each with long-term memory and a mailbox — coordinated by a **GOD orchestrator
 agent you talk to**, and visualized as avatars working a shared office floor. Run a whole office of
@@ -560,13 +560,13 @@ build while you do your thing.
 
 > Sequenced by effort/reward for a new dev tool. All are launch/awareness plays.
 
-- [ ] **Google Search Console** — verify `munderdiffl.in`, submit `sitemap.xml`.
+- [ ] **Google Search Console** — verify `talhashams.me`, submit `sitemap.xml`.
 - [ ] **Bing Webmaster Tools** — verify + submit sitemap (also feeds ChatGPT search).
 - [ ] **awesome-claude-code** and **awesome-ai-agents** lists — submit PRs (highest-intent dev traffic).
 - [ ] **Show HN** — "Show HN: Munder Difflin — run an office of Claude Code agents locally". Link site + repo.
 - [ ] **Product Hunt** launch — gallery from `og.png` + the hero clip.
 - [ ] **Reddit** — r/ClaudeAI, r/LocalLLaMA, r/programming, r/SideProject (value-first posts, not spam).
-- [ ] **dev.to / Hashnode cross-posts** — republish 2–3 top blog posts with `rel=canonical` back to `munderdiffl.in/blog/...` (avoid duplicate-content dilution).
+- [ ] **dev.to / Hashnode cross-posts** — republish 2–3 top blog posts with `rel=canonical` back to `talhashams.me/blog/...` (avoid duplicate-content dilution).
 - [ ] **AI-tool directories** — There's An AI For That, Futurepedia, aitools.fyi, etc.
 - [ ] **Claude Code / Anthropic community** Discord/forum presence (where allowed).
 - [ ] **X/Twitter & LinkedIn** — short demo clips of the office floor; create a handle and then add `twitter:site`.
@@ -599,7 +599,7 @@ build while you do your thing.
 
 ## 9. FOR ANGELA — exactly what the blog must implement
 
-> Angela, this is the contract. Build the blog (GitHub Pages, at `https://munderdiffl.in/blog/`) so
+> Angela, this is the contract. Build the blog (GitHub Pages, at `https://talhashams.me/blog/`) so
 > each post can declare the following. Everything is templated above; this is the checklist.
 
 **Per-post front-matter the templates must support** (whatever your generator uses — Jekyll
@@ -626,7 +626,7 @@ front-matter, JSON, etc. — expose these fields):
 3. `<meta name="theme-color" content="#F5F2E8">`.
 4. JSON-LD per §4: **BlogPosting + BreadcrumbList** on every post (+ **FAQPage** when `faq` present);
    **Blog + BreadcrumbList** on the index.
-5. `<link rel="alternate" type="application/rss+xml" href="https://munderdiffl.in/blog/feed.xml">`.
+5. `<link rel="alternate" type="application/rss+xml" href="https://talhashams.me/blog/feed.xml">`.
 6. Exactly one `<h1>`; descriptive, keyword-bearing `<h2>/<h3>`.
 7. Every post: a **TL;DR** at top, link **up to a home pillar anchor**, **2–4 sibling-post links**,
    and a **"download Munder Difflin" CTA** to `/#install`.

@@ -165,7 +165,7 @@ it fuzzy.
 ---
 
 Munder Difflin gives every Claude Code agent markdown memory plus
-[a shared semantic palace the whole hive can recall from](https://munderdiffl.in/#how) — local, fast,
+[a shared semantic palace the whole hive can recall from](https://talhashams.me/#how) — local, fast,
 and graceful when offline.
-[Download Munder Difflin](https://munderdiffl.in/#install) to give your agents memory that actually
+[Download Munder Difflin](https://talhashams.me/#install) to give your agents memory that actually
 sticks; it's free and open source.

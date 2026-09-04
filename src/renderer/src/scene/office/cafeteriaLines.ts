@@ -50,7 +50,7 @@ const TABLE: readonly string[] = [
   'did you see the standup notes?',
   'pretending to read my notes',
   'I needed this break, honestly',
-  'do NOT tell Aria I’m in here',
+  'do NOT tell Bro I’m in here',
 ];
 
 const SPOT_POOL: Record<BreakSpot, readonly string[]> = {
@@ -60,21 +60,21 @@ const SPOT_POOL: Record<BreakSpot, readonly string[]> = {
 // ─── character flavour — overrides the generic pool when present ─────────────
 
 const BY_CHARACTER: Partial<Record<OfficeCharacterName, readonly string[]>> = {
-  aria:  ['no meetings before coffee. that’s the rule.', 'that’s what she said', 'delegation is an art', 'the floor runs itself today. probably.'],
-  milo:  ['did you read the spec?', 'the spec is clear.', 'I reviewed the diff twice', 'those tests are weak'],
-  sage:  ['the docs wrote themselves today', 'I fixed the wording', 'this font is gorgeous'],
-  bo:    ['the numbers finally balance', 'spreadsheet time', 'someone moved a decimal again'],
-  iris:  ['the schedule is a mess', 'operations, people.', 'everything is on track. barely.'],
+  bro:  ['no meetings before coffee. that’s the rule.', 'that’s what she said', 'delegation is an art', 'the floor runs itself today. probably.'],
+  baran:  ['did you read the spec?', 'the spec is clear.', 'I reviewed the diff twice', 'those tests are weak'],
+  cemal:  ['the docs wrote themselves today', 'I fixed the wording', 'this font is gorgeous'],
+  emir:    ['the numbers finally balance', 'spreadsheet time', 'someone moved a decimal again'],
+  irsoo:  ['the schedule is a mess', 'operations, people.', 'everything is on track. barely.'],
   noor:  ['the data is in', 'this graph is beautiful', 'correlation, not causation'],
-  caleb: ['ticket triaged. next.', 'customer-first, always', 'that one’s on hold'],
-  wren:  ['the prose needs work', 'deadlines are suggestions', 'I rewrote it three times'],
-  theo:  ['growth numbers are up', 'roadmap, then coffee', 'big launch coming'],
-  mia:   ['did you HEAR what happened??', 'so. much. to tell you.', 'the whole team is buzzing'],
-  finn:  ['still learning the ropes', 'the intern needs caffeine', 'starting a side project, actually'],
+  taha: ['ticket triaged. next.', 'customer-first, always', 'that one’s on hold'],
+  talha:  ['the prose needs work', 'deadlines are suggestions', 'I rewrote it three times'],
+  ahmad:  ['growth numbers are up', 'roadmap, then coffee', 'big launch coming'],
+  saad:   ['did you HEAR what happened??', 'so. much. to tell you.', 'the whole team is buzzing'],
+  turab:  ['still learning the ropes', 'the intern needs caffeine', 'starting a side project, actually'],
   ezra:  ['I should write that up…', 'people ops, checking in', 'no one ever sits with me'],
   rex:   ['which one of you is new?', 'I saw that commit', 'least privilege, always'],
   hazel: ['is it 5 o’clock yet?', 'someone spike the coffee?', 'vendor calls. again.'],
-  rowan: ['just here for the gossip', 'the build is green', 'question. yes. nothing. just checking.'],
+  ates: ['just here for the gossip', 'the build is green', 'question. yes. nothing. just checking.'],
 };
 
 /** A solo break-room line. Character flavour ~60% of the time, else the line
@@ -107,7 +107,7 @@ const EXCHANGES: readonly Exchange[] = [
   ['what’s the release smell like?', 'victory. and tests.'],
   ['did you just throw your phone?', 'didn’t like what it said.', 'cool.'],
   ['is a hot dog a sandwich?', 'it is.', 'I know, right?'],
-  ['three-hole-punch Rowan returns.', 'never gets old.'],
+  ['three-hole-punch Ates returns.', 'never gets old.'],
   ['why few word when lot word?', '...genuinely profound.', 'I know.'],
   ['I am not a bad person.', '...', 'not a great person either.', 'there it is.'],
   ['I love my cats more than people.', 'including us?', 'especially you.'],
@@ -185,8 +185,8 @@ const TWSS_EXCHANGES: readonly Exchange[] = [
   ['I can hold it a really long time.', 'that’s what she said.', 'my breath!', 'still.'],
   ['why is it taking so long?', 'that’s what she said.', 'I hate you.', 'then why set me up?'],
   ['I can’t do it with people watching.', 'that’s what she said.', 'the presentation!', 'sure.'],
-  ['it’s deeper than it looks.', 'that’s what she said.', 'the pothole, Aria!', 'doesn’t matter.'],
-  ['so much longer than last time.', 'that’s what she said.', 'the report, Aria.', 'right, right.'],
+  ['it’s deeper than it looks.', 'that’s what she said.', 'the pothole, Bro!', 'doesn’t matter.'],
+  ['so much longer than last time.', 'that’s what she said.', 'the report, Bro.', 'right, right.'],
   ['oh my god, it went on FOREVER.', 'that’s what she said.', 'the meeting!', 'classic.'],
   ['can’t believe how thick this is.', 'that’s what she said.', 'the folder. *stares*'],
   ['I fit all THAT in one day?', 'that’s what she said.', 'that’s actually what I said!', 'meta.'],
@@ -199,7 +199,7 @@ const TWSS_EXCHANGES: readonly Exchange[] = [
   ['*to no one* that’s what she said.', 'nobody said anything.', 'just thinking about earlier.'],
   ['*on the phone* that’s what she said.', 'who was that?', 'my mother. about a sandwich.'],
   ['too hot in here! that’s what she said.', 'you said both parts.', 'I contain multitudes.'],
-  ['*at the TV* that’s what she said.', 'you’re alone, Aria.', 'she doesn’t know that.'],
+  ['*at the TV* that’s what she said.', 'you’re alone, Bro.', 'she doesn’t know that.'],
   ['you need to be more professional.', 'that’s what she said.', 'I am she.', '...that’s what she said.'],
   ['stop. just stop. every time—', 'that’s what she said.', '*leaves the room*', '*whispers* that’s what she said.'],
   ['as you can see, it’s going up.', 'that’s what she said.', '*everyone groans*', 'set that one up myself.'],
@@ -214,16 +214,16 @@ const PAIR_POOL: readonly Exchange[] = [...EXCHANGES, ...TWSS_EXCHANGES];
 // Keyed off the SPEAKER so, when the right character sits down first, they get
 // to open with their signature bit.
 const KEYED_EXCHANGES: Partial<Record<OfficeCharacterName, Exchange>> = {
-  aria:  ['that’s what she said.', '...there it is.'],
-  milo:  ['the spec is unambiguous.', 'nobody reads the spec, Milo.'],
-  bo:    ['why few word when lot word?', '...just use the words, Bo.'],
-  mia:   ['okay don’t freak out, but—', 'I’m already freaking out.'],
+  bro:  ['that’s what she said.', '...there it is.'],
+  baran:  ['the spec is unambiguous.', 'nobody reads the spec, Baran.'],
+  emir:    ['why few word when lot word?', '...just use the words, Emir.'],
+  saad:   ['okay don’t freak out, but—', 'I’m already freaking out.'],
   noor:  ['well, actually—', '...here we go.'],
-  iris:  ['this table is filthy.', 'it’s a break room, Iris.'],
+  irsoo:  ['this table is filthy.', 'it’s a break room, Irsoo.'],
   rex:   ['which one are you again?', '...we sit next to each other.'],
-  caleb: ['is it snack day?', 'no, Caleb.', '...did I stutter?'],
-  theo:  ['I went to that conference.', 'nobody cares.', '...I went to that conference.'],
-  rowan: ['question.', 'yes.', 'nothing. just checking.'],
+  taha: ['is it snack day?', 'no, Taha.', '...did I stutter?'],
+  ahmad:  ['I went to that conference.', 'nobody cares.', '...I went to that conference.'],
+  ates: ['question.', 'yes.', 'nothing. just checking.'],
 };
 
 /** A multi-beat exchange for two agents sharing a table. Beats alternate:

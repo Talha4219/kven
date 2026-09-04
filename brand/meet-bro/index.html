@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en" data-resolution="square">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1080" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: #fff8e7;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .pixel {
+      font-family: "Press Start 2P", monospace;
+    }
+
+    .two-line {
+      display: block;
+    }
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      background: #fff8e7;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+
+    .frame {
+      position: absolute;
+      inset: 24px;
+      border: 10px solid #1a1320;
+      background: #fff8e7;
+      box-shadow: 14px 14px 0 #241b2e;
+      display: grid;
+      grid-template-rows: auto 1fr auto auto;
+      padding: 40px 84px 26px 84px;
+      gap: 0;
+    }
+
+    /* ── header ─────────────────────────────── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .monogram {
+      width: 68px;
+      height: 68px;
+      background: #6e1423;
+      border: 6px solid #4a0d17;
+      color: #fff8e7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 7px 7px 0 #1a1320;
+    }
+
+    .brand-name {
+      font-size: 32px;
+      color: #1a1320;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-sub {
+      font-size: 17px;
+      color: #241b2e;
+      letter-spacing: 0.24em;
+    }
+
+    .boss-chip {
+      background: #6e1423;
+      border: 4px solid #1a1320;
+      color: #fff8e7;
+      font-size: 20px;
+      padding: 14px 20px;
+      box-shadow: 6px 6px 0 #1a1320;
+      letter-spacing: 0.14em;
+    }
+
+    /* ── portrait / copy row ────────────────── */
+    .main-row {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .portrait-card {
+      width: 360px;
+    }
+
+    .portrait-panel {
+      background: #e0daf2;
+      border: 8px solid #1a1320;
+      box-shadow: 10px 10px 0 #9482d3;
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #bro-sprite {
+      width: 168px;
+      height: 264px;
+      image-rendering: pixelated;
+      overflow: hidden;
+    }
+
+    .portrait-caption {
+      margin-top: 22px;
+      font-size: 16px;
+      color: #1a1320;
+      background: #fff8e7;
+      letter-spacing: 0.06em;
+    }
+
+    .portrait-caption b {
+      color: #6e1423;
+    }
+
+    /* ── copy column ────────────────────────── */
+    .copy {
+      padding-top: 2px;
+    }
+
+    .eyebrow {
+      font-size: 19px;
+      color: #6e1423;
+      letter-spacing: 0.3em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #1a1320;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    h1 .accent {
+      color: #9482d3;
+    }
+
+    .lede {
+      font-size: 20px;
+      line-height: 1.4;
+      color: #241b2e;
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+
+    .duties {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .duties li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 13px;
+    }
+
+    .duties .sq {
+      flex: 0 0 14px;
+      width: 14px;
+      height: 14px;
+      margin-top: 7px;
+      background: #6e1423;
+      border: 3px solid #1a1320;
+    }
+
+    .duties .who {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1a1320;
+      letter-spacing: 0.06em;
+    }
+
+    .duties .what {
+      font-size: 15px;
+      color: #241b2e;
+      margin-top: 2px;
+    }
+
+    /* ── usage strip ────────────────────────── */
+    .usage {
+      margin-top: 34px;
+      background: #ffca54;
+      border: 8px solid #1a1320;
+      box-shadow: 8px 8px 0 #1a1320;
+      padding: 20px 26px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .usage-label {
+      flex: 0 0 auto;
+      background: #1a1320;
+      color: #fff8e7;
+      font-size: 16px;
+      padding: 12px 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .usage-text {
+      font-size: 16px;
+      color: #241b2e;
+      line-height: 1.5;
+    }
+
+    .usage-text b {
+      color: #6e1423;
+    }
+
+    /* ── footer ─────────────────────────────── */
+    .footer {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer .tag {
+      font-size: 14px;
+      color: #1a1320;
+      letter-spacing: 0.05em;
+    }
+
+    .footer .site {
+      font-size: 15px;
+      color: #6e1423;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="1" data-width="1080" data-height="1080">
+    <section id="meet-bro-card" class="clip" data-start="0" data-duration="1" data-track-index="1">
+      <div class="frame">
+        <div class="header">
+          <div class="logo">
+            <div class="monogram pixel">KV</div>
+            <div>
+              <div class="brand-name pixel">KVEN</div>
+              <div class="brand-sub mono">AGENT HIVE</div>
+            </div>
+          </div>
+          <div class="boss-chip pixel">BOSS</div>
+        </div>
+
+        <div class="main-row">
+          <div class="portrait-card">
+            <div class="portrait-panel">
+              <div id="bro-sprite"></div>
+            </div>
+            <div class="portrait-caption mono">
+              <b>BRO</b> · god orchestrator
+              <span class="two-line">voice: cedar</span>
+            </div>
+          </div>
+
+          <div class="copy">
+            <div class="eyebrow mono">THE GOD ORCHESTRATOR</div>
+            <h1 class="pixel">
+              MEET <span class="accent">BRO.</span>
+            </h1>
+            <p class="lede">
+              The boss of your agent floor. Talk to him in plain language — he runs the whole
+              hive while you watch.
+            </p>
+            <ul class="duties mono">
+              <li>
+                <div class="sq"></div>
+                <div>
+                  <div class="who">KEEP THE ROSTER</div>
+                  <div class="what">who's hired, who's active, what each one does</div>
+                </div>
+              </li>
+              <li>
+                <div class="sq"></div>
+                <div>
+                  <div class="who">ROUTE THE WORK</div>
+                  <div class="what">decompose, dispatch, sign off the big calls</div>
+                </div>
+              </li>
+              <li>
+                <div class="sq"></div>
+                <div>
+                  <div class="who">ADJUDICATE</div>
+                  <div class="what">settle agent-to-agent traffic on the floor</div>
+                </div>
+              </li>
+              <li>
+                <div class="sq"></div>
+                <div>
+                  <div class="who">ESCALATE</div>
+                  <div class="what">only money, destructive ops, scope, conflicts</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="usage">
+          <div class="usage-label pixel">JUST TALK TO HIM</div>
+          <div class="usage-text">
+            <b>Goal · constraints · budget · deliverable.</b> Command Center, Talk mode, or
+            Slack — he staffs it, routes it, reports back.
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="tag pixel">
+            HE'S THE BOSS OF THE FLOOR.<span class="two-line">YOU'RE STILL THE BOSS OF HIM.</span>
+          </div>
+          <div class="site mono">talhashams.me</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function buildSprite() {
+      var cols = 14;
+      var px = 12;
+      var rows = [
+        "..HHHHHHHHHH..",
+        ".HHHHHHHHHHHH.",
+        ".HSSSSSSSSSSH.",
+        ".HSSSSSSSSSSH.",
+        ".HSSSSSSSSSSH.",
+        ".HSSSSSSSSSSH.",
+        ".HBBSSSSSSBBH.",
+        ".HSEESSSSEESH.",
+        ".HSSSSSSSSSSH.",
+        ".HSSSSSSSSSSH.",
+        ".SSSSTSSSSSLLL",
+        ".SSSDDDDDSSSLL",
+        ".SSSSSSSSSSSLL",
+        ".SSSSSSSSSSSS.",
+        ".SSSSSSSSSSSS.",
+        "MMMMMMMMMMMMMM",
+        "MMWWWVVVVWWMMM",
+        "MMMWVVVVVWMMM.",
+        "MMMWVVVVVVWMMM",
+        "MMMWWWWWWWWMMM",
+        "MMMMMMMMMMMMMM",
+        "NNNNNNNNNNNNNN"
+      ];
+      var palette = {
+        H: [26, 19, 32],
+        S: [247, 201, 170],
+        T: [212, 158, 126],
+        B: [26, 19, 32],
+        E: [26, 19, 32],
+        D: [90, 60, 40],
+        M: [110, 20, 35],
+        N: [74, 13, 23],
+        W: [255, 248, 231],
+        V: [148, 130, 211],
+        L: [255, 202, 84]
+      };
+      var shadows = [];
+      rows.forEach(function (r, y) {
+        for (var x = 0; x < cols; x++) {
+          var ch = r[x];
+          if (ch === "." || !palette[ch]) continue;
+          var c = palette[ch];
+          shadows.push(x * px + "px " + y * px + "px 0 rgb(" + c[0] + "," + c[1] + "," + c[2] + ")");
+        }
+      });
+      var host = document.getElementById("bro-sprite");
+      host.style.width = "1px";
+      host.style.height = "1px";
+      host.style.background = "transparent";
+      host.style.boxShadow = shadows.join(", ");
+    })();
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = gsap.timeline({ paused: true });
+  </script>
+</body>
+
+</html>

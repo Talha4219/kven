@@ -93,4 +93,4 @@ That's what an orchestrator-plus-scheduler should feel like. The prompt was the 
 
 ---
 
-Munder Difflin is free, open source, and local-first — [download it](https://munderdiffl.in/#install) and set your first ScheduledMission. The [god orchestrator](https://munderdiffl.in/#how) takes plain English; what you get back is a team that runs on it.
+Munder Difflin is free, open source, and local-first — [download it](https://talhashams.me/#install) and set your first ScheduledMission. The [god orchestrator](https://talhashams.me/#how) takes plain English; what you get back is a team that runs on it.

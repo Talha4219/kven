@@ -46,7 +46,7 @@ loops and adds the parts a lone agent doesn't have:
 - **Messaging.** Agents pass information to each other directly, rather than through you.
 - **Shared memory.** Durable, cross-session knowledge so agent B can use what agent A learned.
 - **Orchestration.** A coordinator that decomposes your intent and assigns work — in Munder Difflin
-  that's the [GOD orchestrator](https://munderdiffl.in/#how), an agent you talk to in plain language.
+  that's the [GOD orchestrator](https://talhashams.me/#how), an agent you talk to in plain language.
 - **Visibility.** A way to *see* what the team is doing, so it's not a black box.
 
 ## Harness vs. framework vs. subagents
@@ -64,7 +64,7 @@ short-lived and scoped to that one parent — no shared memory across your whole
 ### Harness
 Software that **wraps agents you already run** and coordinates them. You don't rebuild your agent;
 you keep using Claude Code, and the harness adds messaging, memory, orchestration, and a view of the
-floor. That's the [multi-agent harness](https://munderdiffl.in/#what) approach.
+floor. That's the [multi-agent harness](https://talhashams.me/#what) approach.
 
 ## When you actually need one
 
@@ -81,6 +81,6 @@ so the team stops forgetting.
 
 ---
 
-Munder Difflin is exactly this: a local, open-source multi-agent harness for Claude Code. If you
+Munder Difflin is exactly this: a local, source-available multi-agent harness for Claude Code. If you
 want to watch a coordinated team of agents work an office floor,
-[download Munder Difflin](https://munderdiffl.in/#install) — it's free and MIT-licensed.
+[download Munder Difflin](https://talhashams.me/#install) — it's free and source-available.

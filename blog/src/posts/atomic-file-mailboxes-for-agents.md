@@ -163,7 +163,7 @@ agent-to-agent and agent-to-orchestrator.
 
 ---
 
-Munder Difflin runs exactly this mailbox system inside [a hive the GOD orchestrator runs](https://munderdiffl.in/#how) — atomic
+Munder Difflin runs exactly this mailbox system inside [a hive the GOD orchestrator runs](https://talhashams.me/#how) — atomic
 delivery, speech-act messages, hop caps, and a full git audit trail, all local.
-[Download Munder Difflin](https://munderdiffl.in/#install) to watch envelopes fly between agents on
+[Download Munder Difflin](https://talhashams.me/#install) to watch envelopes fly between agents on
 the office floor; it's free and open source.

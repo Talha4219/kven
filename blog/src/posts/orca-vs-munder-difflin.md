@@ -19,16 +19,16 @@ faq:
   - q: "Is Orca better than Munder Difflin?"
     a: "For interactive, editor-centric work, honestly, often yes. Orca's editing, diff-annotation, per-worktree browser preview, and mobile companion are more polished for hands-on driving. Munder Difflin wins when you want autonomy: orchestration, shared memory, external triggers, scheduling, and guardrails that let a team of agents work while you're away. They solve different problems."
   - q: "Can I use Orca and Munder Difflin together?"
-    a: "Yes, and it's a sensible split. Both are free, MIT-licensed, local-first desktop apps that drive the same agent CLIs on your own subscriptions, so nothing conflicts. Use Orca when you're at the keyboard iterating on a feature; use Munder Difflin as the always-on layer that handles routed, scheduled, and Slack-triggered work in the background."
+    a: "Yes, and it's a sensible split. Both are free, local-first desktop apps that drive the same agent CLIs on your own subscriptions — Orca is MIT-licensed, Munder Difflin is source-available — so nothing conflicts. Use Orca when you're at the keyboard iterating on a feature; use Munder Difflin as the always-on layer that handles routed, scheduled, and Slack-triggered work in the background."
   - q: "Do both tools use git worktrees for agent isolation?"
     a: "Yes. Orca is built around worktree isolation — every agent task gets its own worktree so parallel agents never collide. Munder Difflin has the same per-agent worktree isolation as a toggle, but layers a coordination system on top: a hive of mailboxes, a shared blackboard, single-committer git, and an orchestrator that routes messages between the isolated agents."
   - q: "Are Orca and Munder Difflin both free and open source?"
-    a: "Yes. Both are MIT-licensed, free, local-first desktop apps for macOS, Windows, and Linux, and both are bring-your-own-subscription — they wrap the agent CLIs and accounts you already have rather than reselling model access."
+    a: "Yes. Both are free, local-first desktop apps for macOS, Windows, and Linux — Orca is MIT-licensed, Munder Difflin is source-available — and both are bring-your-own-subscription — they wrap the agent CLIs and accounts you already have rather than reselling model access."
 ---
 
-<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Orca is an Agent IDE; Munder Difflin is an agent office.</strong> Orca (from YC-backed Stably AI) is the polished cockpit for <strong>driving coding agents interactively</strong> — parallel worktrees, great terminals, a VS Code editor, diff annotation, and a genuinely useful mobile companion. Munder Difflin is the layer above the cockpit: a <strong>GOD orchestrator</strong> that routes work, <strong>shared long-term memory</strong>, triggers from <strong>Slack, webhooks, schedules, and voice</strong>, and guardrails (approvals, budgets, circuit breaker) that make <strong>days-long autonomy</strong> safe. Both are free, MIT-licensed, local-first, BYO-subscription. Pick Orca to <em>sit and steer</em>; pick Munder Difflin to <em>delegate and walk away</em>. They coexist fine.</p></div>
+<div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Orca is an Agent IDE; Munder Difflin is an agent office.</strong> Orca (from YC-backed Stably AI) is the polished cockpit for <strong>driving coding agents interactively</strong> — parallel worktrees, great terminals, a VS Code editor, diff annotation, and a genuinely useful mobile companion. Munder Difflin is the layer above the cockpit: a <strong>GOD orchestrator</strong> that routes work, <strong>shared long-term memory</strong>, triggers from <strong>Slack, webhooks, schedules, and voice</strong>, and guardrails (approvals, budgets, circuit breaker) that make <strong>days-long autonomy</strong> safe. Both are free, local-first, BYO-subscription — Orca is MIT-licensed, Munder Difflin is source-available. Pick Orca to <em>sit and steer</em>; pick Munder Difflin to <em>delegate and walk away</em>. They coexist fine.</p></div>
 
-If you're evaluating tools for running multiple coding agents, Orca and Munder Difflin will both show up in your search — and on paper they rhyme. Both are free, MIT-licensed desktop apps. Both run on macOS, Windows, and Linux. Both wrap the agent CLIs you already pay for — Claude Code, Codex, OpenCode, and more — instead of reselling model access. Both isolate agents in git worktrees so parallel work doesn't collide.
+If you're evaluating tools for running multiple coding agents, Orca and Munder Difflin will both show up in your search — and on paper they rhyme. Both are free desktop apps — Orca is MIT-licensed, Munder Difflin is source-available. Both run on macOS, Windows, and Linux. Both wrap the agent CLIs you already pay for — Claude Code, Codex, OpenCode, and more — instead of reselling model access. Both isolate agents in git worktrees so parallel work doesn't collide.
 
 But they are not the same product, and pretending otherwise would help nobody. One is an IDE. The other is an office. Here's the honest version of that boundary.
 
@@ -73,7 +73,7 @@ v0.3.3 did add a built-in Monaco IDE — file tree, tabs, side-by-side diffs vs 
 | Away-from-desk | Mobile app (monitor + steer) | Runs autonomously with approval gates |
 | Editor flow | VS Code editor, Design Mode, diff annotation — stronger | Monaco review surface — lighter |
 | Guardrails | Your judgment | Approvals, budgets, circuit breaker, OTel |
-| License / cost | MIT, free, BYO subscription | MIT, free, BYO subscription |
+| License / cost | MIT, free, BYO subscription | Source-available, free, BYO subscription |
 
 ## When to pick which
 

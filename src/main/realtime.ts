@@ -1,5 +1,5 @@
 /**
- * Realtime Aria — main-process ephemeral-token mint (card rt-1, Phase 1).
+ * Realtime Bro — main-process ephemeral-token mint (card rt-1, Phase 1).
  *
  * The voice orchestrator (OpenAI `gpt-realtime-2`, speech-to-speech over WebRTC)
  * connects from the RENDERER. The renderer must NEVER hold the real OpenAI key, so
@@ -12,7 +12,7 @@
  *
  * Phase 1 is read-only — this module ONLY mints (no action tools; that's rt-5).
  *
- * Branch feat/realtime-aria. See board.md "🎙 REALTIME ARIA".
+ * Branch feat/realtime-bro. See board.md "🎙 REALTIME ARIA".
  */
 import { ipcMain } from 'electron';
 import { getSecret, hasSecret } from './integrations';
@@ -43,7 +43,7 @@ export type MintResult =
   | { ok: false; error: string; code?: string };
 
 /** Whether a BYOK OpenAI key is stored (presence only — no decryption). Gates the
- *  Realtime Aria voice toggle in the renderer, the way `hasGroqKey` gates the
+ *  Realtime Bro voice toggle in the renderer, the way `hasGroqKey` gates the
  *  Free Flow mic button. */
 export function hasOpenAiKey(): boolean {
   return hasSecret(OPENAI_KEY_REF);

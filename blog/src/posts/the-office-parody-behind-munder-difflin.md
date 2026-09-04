@@ -36,7 +36,7 @@ turned out to be the perfect frame for a serious piece of agent infrastructure.
 
 ## The joke, briefly
 
-[Munder Difflin](/) is an [open-source multi-agent harness](/#what) for Claude Code — and it's dressed
+[Munder Difflin](/) is an [source-available multi-agent harness](/#what) for Claude Code — and it's dressed
 as a parody of *Dunder Mifflin*, the fictional paper company from *The Office*. The tagline sets the
 tone: **"The world's best agents. The world's worst paper company."** The avatars are the show's cast,
 each with its own look, working at desks on a visual office floor rendered in a friendly pixel
@@ -108,10 +108,10 @@ The parody just makes the diagram delightful.
 It's a tribute, made with affection and not a small amount of respect for the source material. *Munder
 Difflin* is an affectionate parody and is **not affiliated with NBC's *The Office* or Dunder Mifflin* —
 the homage is the whole point, and the credit belongs to the show that made an office feel like a
-family. Under the costume is a real, [MIT-licensed multi-agent harness](/blog/why-we-built-munder-difflin/);
+family. Under the costume is a real, [source-available multi-agent harness](/blog/why-we-built-munder-difflin/);
 the bit is how we make it make sense.
 
 ---
 
 Come meet the team. [Download Munder Difflin](/#install) to run your own office of Claude Code agents —
-Michael's already at his desk. Free and open source.
+Michael's already at his desk. Free and source-available.

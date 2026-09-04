@@ -13,7 +13,7 @@ author:
   initials: CG
 faq:
   - q: "Is Munder Difflin free?"
-    a: "Yes. Munder Difflin is free and open source under the MIT license. Download a build for macOS, Windows, or Linux, or run it from source — there's no paid tier."
+    a: "Yes. Munder Difflin is source-available. Download a build for macOS, Windows, or Linux, or run it from source — there's no paid tier."
   - q: "Do I need Claude Code to use Munder Difflin?"
     a: "Yes. Munder Difflin coordinates real Claude Code sessions, so you bring your own Claude Code (the `claude` CLI on your PATH). Each agent runs a real `claude` process; the harness adds memory, messaging, and the GOD orchestrator on top."
   - q: "Can I leave it running for hours or days?"

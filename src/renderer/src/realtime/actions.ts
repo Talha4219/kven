@@ -1,12 +1,12 @@
 /**
- * Realtime Aria — voice ACTION tools (card rt-5, Phase 2).
+ * Realtime Bro — voice ACTION tools (card rt-5, Phase 2).
  *
- * The write-side function-tools that turn voice-Aria into an orchestrator: ping
+ * The write-side function-tools that turn voice-Bro into an orchestrator: ping
  * / dispatch / steer / task CRUD / spawn-hire / kill / pause / halt / edit-schedule.
  * These are THIN — every tool just forwards a {verb, ...args} to the main process
  * (src/main/realtimeActions.ts), which owns the entire safety spine: the soft-vs-
  * destructive tiering, the two-step verbal echo-back confirm, the distinct-token
- * rule, the hard allowlist (kill-god / mass-ops forbidden), and the aria-voice
+ * rule, the hard allowlist (kill-god / mass-ops forbidden), and the bro-voice
  * attribution. The renderer is the untrusted side, so it holds NO policy — it only
  * speaks back what main returns (`res.spoken`).
  *

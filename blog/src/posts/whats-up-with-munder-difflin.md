@@ -17,11 +17,11 @@ faq:
   - q: "What shipped between v0.3.3 and v0.3.7?"
     a: "Four releases in about six weeks. v0.3.4 was the big wave: voice orchestration that opens with a live snapshot of every agent and can run nearly the whole app, markdown previews everywhere, a git time-machine in the built-in IDE (commit history, branch compare, guarded checkout), a six-tab Settings redesign, xAI Grok and Kimi Code engines, and one single delivery gate for every automatic writer. v0.3.5 added a 'send now' escape hatch for a paused queue. v0.3.6 made a machine with nothing installed on it able to run agents — Node and npm install themselves, verified against Apple's published checksums. v0.3.7 fixed auto-update."
   - q: "Do I need to reinstall to get v0.3.7?"
-    a: "Yes, once. Every build from v0.3.4 through v0.3.6 carries the broken updater and cannot fetch the fix that repairs it — the one bootstrap problem a self-updating app can't solve for itself. Download v0.3.7 from munderdiffl.in or the GitHub releases page. From v0.3.7 onward, updates download in the background and wait for your restart."
+    a: "Yes, once. Every build from v0.3.4 through v0.3.6 carries the broken updater and cannot fetch the fix that repairs it — the one bootstrap problem a self-updating app can't solve for itself. Download v0.3.7 from talhashams.me or the GitHub releases page. From v0.3.7 onward, updates download in the background and wait for your restart."
   - q: "How many agent CLIs does Munder Difflin support?"
     a: "Nine: Claude Code, OpenAI Codex, Antigravity (Gemini), GitHub Copilot CLI, xAI Grok, Kimi Code, OpenCode, Crush, and pi.dev. Each gets a desk, a mailbox, and shared memory, and most can play the GOD orchestrator role themselves. You can mix engines on the same floor, and bring your own API keys or point them at local models through Ollama, LM Studio, or vLLM."
   - q: "Is Munder Difflin free?"
-    a: "Yes. MIT-licensed, free forever, and local-first. It drives the agent CLI subscriptions you already pay for rather than adding a bill of its own, and your code never leaves your machine."
+    a: "Yes. Source-available, free forever, and local-first. It drives the agent CLI subscriptions you already pay for rather than adding a bill of its own, and your code never leaves your machine."
 ---
 
 <div class="callout tldr"><span class="ic">TL;DR</span><p>Six weeks, four releases. <strong>Michael learned the floor</strong> and can now run nearly the whole app by voice. The IDE became a <strong>git time-machine</strong>. Two more engines brought the roster to <strong>nine</strong>. The message queue got <strong>one gate</strong> instead of four competing loops. A machine with <strong>nothing installed on it</strong> can now run agents. And <strong>auto-update — which had never once worked</strong> — actually works. If you're on v0.3.5 or v0.3.6, you'll need to grab v0.3.7 by hand, once.</p></div>
@@ -174,7 +174,7 @@ so it can't fetch the fix that repairs it — the one bootstrap problem a self-u
 cannot solve for itself.
 
 [**Download v0.3.7**](https://github.com/chaitanyagiri/munder-difflin/releases/latest) —
-macOS (signed and notarized), Windows, Linux. Free, MIT-licensed, local-first, and after this
+macOS (signed and notarized), Windows, Linux. Free, source-available, local-first, and after this
 one manual step, it keeps itself current.
 
 ## What's next
@@ -185,5 +185,5 @@ integration templates. And pushing the remaining avatar station-visits to be dri
 by real hook events rather than inferred.
 
 The model you rent gets better every few weeks without you doing anything. Your context is
-already yours. The harness in between is the part worth owning — so it's free, it's MIT, and
+already yours. The harness in between is the part worth owning — so it's free, it's source-available, and
 it runs on your machine.

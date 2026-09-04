@@ -103,8 +103,8 @@ export interface AgentProviderPreset {
    *  derives `{kind:'hooks'}` from their `hookBridge`. claude/custom leave it
    *  undefined (no bridge). Prefer `bridgeOf(provider)` over reading this directly. */
   bridge?: BridgeDescriptor;
-  /** The model the GOD orchestrator ("Aria") defaults to when this provider
-   *  powers it — surfaced as the picker default and the advisory "give Aria a
+  /** The model the GOD orchestrator ("Bro") defaults to when this provider
+   *  powers it — surfaced as the picker default and the advisory "give Bro a
    *  longer-context, higher-capability model". `modelForRole` resolves the GOD
    *  model as `config.godModel ?? preset.recommendedOrchestratorModel ?? MODEL_GOD`.
    *  Advisory + user-overridable. */
@@ -174,7 +174,7 @@ export const AGENT_PROVIDER_PRESETS: AgentProviderPreset[] = [
     autoFlag: '--permission-mode bypassPermissions',
     hiveAware: true,
     canReceiveInbox: true,
-    // Longest-context Claude variant — matches the "give Aria a bigger model"
+    // Longest-context Claude variant — matches the "give Bro a bigger model"
     // advisory and the Recommended tag on the orchestrator picker.
     recommendedOrchestratorModel: 'claude-opus-4-8[1m]',
     resumeFlag: '--resume',

@@ -19,7 +19,7 @@ faq:
   - q: "How does the circuit breaker keep agents from running away?"
     a: "The breaker watches each agent through a steer → constrain → stop ladder and a cost/runaway guard, fed by hook signals (like repeated identical tool calls) and a scheduler heartbeat that knows when an agent has gone quiet. When an agent loops, storms errors, or blows its token budget, the breaker steers it first, constrains it next, and stops it as a last resort — and the avatar shows a 'looping' state so you can see it happen."
   - q: "Is Munder Difflin still free and open source?"
-    a: "Yes. Munder Difflin is MIT-licensed, local-first, and runs on macOS, Windows, and Linux. v0.2.0 is a community release in the most literal sense — most of the work in this version came from external contributors, credited in full below and in the CHANGELOG."
+    a: "Yes. Munder Difflin is source-available, local-first, and runs on macOS, Windows, and Linux. v0.2.0 is a community release in the most literal sense — most of the work in this version came from external contributors, credited in full below and in the CHANGELOG."
 ---
 
 <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Munder Difflin v0.2.0</strong> is the
@@ -153,7 +153,7 @@ And, as ever, maintained by **@chaitanyagiri**. If you want the full, line-by-li
 
 ## Get v0.2.0
 
-Munder Difflin is free, open source (MIT), and local-first on macOS, Windows, and Linux. If you've already got
+Munder Difflin is free, source-available, and local-first on macOS, Windows, and Linux. If you've already got
 it, upgrading is in-place — your hive, memory, and schedules carry forward, and you can one-click **Restore team**
 after the restart. If you're new, the fastest way to feel the difference is to [download Munder Difflin](/#install)
 and run a few agents until you want to *watch* them — which, as of v0.2.0, you finally can.

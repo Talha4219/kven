@@ -136,7 +136,7 @@ export interface ToolStatus extends ToolSpec {
 }
 
 /**
- * The prompt handed to Aria by "ask Aria to set up everything".
+ * The prompt handed to Bro by "ask Bro to set up everything".
  *
  * Written as an explicit contract rather than a wish: name the exact commands so
  * he does not have to guess or search, tell him to VERIFY rather than assume, and

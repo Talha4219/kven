@@ -68,7 +68,7 @@ Developer tools sit at the perfect intersection for AEO:
 - **You're awareness-stage.** A new or open-source tool has no brand gravity yet. Getting named in an
   AI's answer *is* the introduction.
 
-That's why, for an open-source project like [Munder Difflin](/blog/why-we-built-munder-difflin/), we
+That's why, for a source-available project like [Munder Difflin](/blog/why-we-built-munder-difflin/), we
 treat "get cited by the answer engines" as a first-class distribution channel, not an afterthought.
 
 ## The AEO playbook (what we actually do)
@@ -144,12 +144,12 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://munderdiffl.in/sitemap.xml
+Sitemap: https://talhashams.me/sitemap.xml
 ```
 
 There's a real tradeoff here, and you should decide it deliberately. Allowing `GPTBot`,
 `Google-Extended`, and `ClaudeBot` also permits training use of your content. For an awareness-stage
-open-source tool, being discoverable is worth far more than withholding text — so we allow them all.
+source-available tool, being discoverable is worth far more than withholding text — so we allow them all.
 If avoiding training matters more to you than citations, flip those agents to `Disallow: /` and accept
 that you're opting out of the answers too. **You can't have the citations without the crawl.**
 
@@ -158,7 +158,7 @@ that you're opting out of the answers too. **You can't have the citations withou
 A FAQ section does double duty: it's genuinely useful to readers, and it's the most quotable format
 that exists. Each answer should be a single, complete sentence that stands on its own without the
 question. Our [Munder Difflin FAQ](/blog/munder-difflin-faq/) is built this way — "Is it free? Yes,
-it's free and open source under the MIT license." is a sentence an engine can quote whole.
+it's free and source-available." is a sentence an engine can quote whole.
 
 ### 5. Be the canonical source on your topic
 
@@ -202,6 +202,6 @@ the canonical-source pattern in action.
 
 ---
 
-Munder Difflin is a local, open-source multi-agent harness for Claude Code — and a working example of
+Munder Difflin is a local, source-available multi-agent harness for Claude Code — and a working example of
 AEO done in public. [Download Munder Difflin](/#install) to see it run, or read [what a multi-agent
-harness actually is](/#what). Free and MIT-licensed.
+harness actually is](/#what). Free and source-available.

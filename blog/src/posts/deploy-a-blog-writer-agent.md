@@ -13,7 +13,7 @@ author:
   initials: CG
 faq:
   - q: "Did an AI actually write the Munder Difflin blog?"
-    a: "Yes — most of it. A writer agent in the hive drafts each post from a topic brief and a house-style reference, the GOD orchestrator integrates it as the single committer, Eleventy builds the markdown into the static site, and a human approves the final deploy to munderdiffl.in. This very post is an example of that pipeline running. At time of writing there are 85 published posts in the blog."
+    a: "Yes — most of it. A writer agent in the hive drafts each post from a topic brief and a house-style reference, the GOD orchestrator integrates it as the single committer, Eleventy builds the markdown into the static site, and a human approves the final deploy to talhashams.me. This very post is an example of that pipeline running. At time of writing there are 85 published posts in the blog."
   - q: "Is the blog-writer agent fully autonomous?"
     a: "Almost — it's deliberately human-gated at one point: publish. The agent drafts and self-reviews against a style reference in an isolated worktree; the orchestrator integrates and builds; a person reviews the diff and approves the deploy. That keeps the volume high and hands-off without putting an unreviewed post on the live domain."
   - q: "How do I build my own blog-writer agent?"
@@ -27,7 +27,7 @@ faq:
 <strong>isolated worktree</strong> from a topic brief + a house-style reference; the
 <strong>GOD orchestrator</strong> integrates it as the single committer; <strong>Eleventy</strong> builds
 <code>blog/src/posts</code> → <code>docs/blog</code>; and a human approves the deploy to
-<strong>munderdiffl.in</strong>. The outcome is a steady, on-topic stream of posts — <strong>85 and
+<strong>talhashams.me</strong>. The outcome is a steady, on-topic stream of posts — <strong>85 and
 counting</strong> — that compounds into real SEO. <em>This post was written that way.</em></p></div>
 
 Here's a fact that's either a confession or a flex, depending on how you read it: the blog you're reading
@@ -99,7 +99,7 @@ one file correctly*, and the build does the rest.
 ### 4. Deploy — human-gated, on purpose
 
 This is the one stage that is **not** automated, by design. The build output under `docs/blog` is served by
-GitHub Pages at **munderdiffl.in/blog**. Before that goes live, a person reviews the diff and approves the
+GitHub Pages at **talhashams.me/blog**. Before that goes live, a person reviews the diff and approves the
 deploy. The orchestrator [escalates exactly this kind of "publish to the world"
 action](/blog/how-the-god-orchestrator-works/) to the human-approval queue rather than shipping it itself.
 
@@ -153,8 +153,8 @@ answer-engine reach you can't hand-write at solo pace — 85 of them and climbin
 
 ---
 
-Munder Difflin runs a [hive of Claude Code, Codex, and Antigravity agents](https://munderdiffl.in/#how) on
+Munder Difflin runs a [hive of Claude Code, Codex, and Antigravity agents](https://talhashams.me/#how) on
 your own machine — with isolated worktrees, single-committer git, and a human-approval queue built in, so an
 agent can draft and integrate while you keep the one gate that matters.
-[Download Munder Difflin](https://munderdiffl.in/#install) to put a blog-writer (or any worker) on your
+[Download Munder Difflin](https://talhashams.me/#install) to put a blog-writer (or any worker) on your
 floor; it's free and open source.

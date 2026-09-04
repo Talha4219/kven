@@ -195,6 +195,6 @@ it, and the handler runs even if the tunnel doesn't.
 ---
 
 Munder Difflin turns a GitHub event into a remote control for a hive that still lives entirely on your machine
-— [orchestrated by GOD](https://munderdiffl.in/#how), verified at the edge, queued like any other task.
-[Download Munder Difflin](https://munderdiffl.in/#install) to wire your repo into your agents; it's free and
+— [orchestrated by GOD](https://talhashams.me/#how), verified at the edge, queued like any other task.
+[Download Munder Difflin](https://talhashams.me/#install) to wire your repo into your agents; it's free and
 open source.

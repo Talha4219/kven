@@ -119,4 +119,4 @@ Everything from v0.2.0 (observability, circuit breaker, fleet monitoring, persis
 
 To use the new providers: install the relevant CLIs (`agy` for Antigravity, `codex` for OpenAI Codex) and put them on your `PATH`. When you add a worker in the Add Agent dialog, select the provider. The hive handles the rest.
 
-Download v0.2.4 from the [releases page](https://github.com/chaitanyagiri/munder-difflin/releases/latest). Munder Difflin is free, open source, and local-first on macOS, Windows, and Linux.
+Download v0.2.4 from the [releases page](https://github.com/chaitanyagiri/munder-difflin/releases/latest). Munder Difflin is free, source-available, and local-first on macOS, Windows, and Linux.

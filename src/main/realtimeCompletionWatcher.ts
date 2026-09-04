@@ -1,15 +1,15 @@
 /**
- * Realtime Aria — completion watcher (card rt-12, Phase 2, "respond when done").
+ * Realtime Bro — completion watcher (card rt-12, Phase 2, "respond when done").
  *
- * When voice-Aria DISPATCHES work (fire-and-notify, the default pattern), he does
+ * When voice-Bro DISPATCHES work (fire-and-notify, the default pattern), he does
  * NOT block on it. This module is the main-process engine that watches each dispatched
  * task for completion and EMITS a completion event so the rest of the realtime stack can
- * make Aria speak it unprompted ("Baran finished — want details?").
+ * make Bro speak it unprompted ("Baran finished — want details?").
  *
  * OWNERSHIP / SEAM (rt-12 split, god-ruled 2026-06-25): this module is OWNED by Reyyan and
- * is deliberately DISJOINT from Choto's realtime CORE files. It NEVER imports session.ts
+ * is deliberately DISJOINT from Bro's realtime CORE files. It NEVER imports session.ts
  * / the live RealtimeSession / electron — it only takes injected readers + a clock and
- * EMITS via callbacks. Choto's side subscribes `onCompletion(...)` and pushes the event
+ * EMITS via callbacks. Bro's side subscribes `onCompletion(...)` and pushes the event
  * down the new main→renderer channel (preload binding + session.ts injection), calls
  * `track(...)` from the dispatch action, flips `setSessionLive(...)` on connect/disconnect,
  * and `drainQueuedCompletions()` at warm-start. Keeping this file electron-free + reader-
@@ -19,16 +19,16 @@
  *   (a) the dispatched task's card flips to `done` in tasks.json, OR
  *   (b) an inbox done-msg arrives from the assignee (a reply to the dispatch, after it).
  *
- * Branch feat/realtime-aria. See board.md "🎙 REALTIME ARIA".
+ * Branch feat/realtime-bro. See board.md "🎙 REALTIME ARIA".
  */
 
-/** A unit of work voice-Aria dispatched and is now awaiting completion of. */
+/** A unit of work voice-Bro dispatched and is now awaiting completion of. */
 export interface PendingDispatch {
   /** Stable id for this dispatch (the watcher key). e.g. the dispatch message id. */
   correlationId: string;
   /** What kind of work was dispatched — shapes the spoken summary. */
   kind: 'dispatch' | 'task' | 'spawn';
-  /** The agent the work went to (e.g. "aria-mqpbr18v"). */
+  /** The agent the work went to (e.g. "bro-mqpbr18v"). */
   targetAgentId: string;
   /** The task-card id, if a card exists for this dispatch (enables card→done detection). */
   taskId?: string;
@@ -82,9 +82,9 @@ export interface CompletionResult {
 
 /**
  * The completion object the watcher emits via `onCompletion` AND returns from
- * `drainQueuedCompletions()` — the SAME shape (rt-12 contract lock with Choto). Choto
+ * `drainQueuedCompletions()` — the SAME shape (rt-12 contract lock with Bro). Bro
  * forwards it verbatim over the main→renderer push channel and into warm-start, so every
- * field here reaches Aria. `summary` is the human-speakable line; `completedAt` is
+ * field here reaches Bro. `summary` is the human-speakable line; `completedAt` is
  * epoch-ms. The trailing fields are extra context (safe to ignore on the wire).
  */
 export interface RealtimeCompletion {
@@ -92,7 +92,7 @@ export interface RealtimeCompletion {
   kind: PendingDispatch['kind'];
   targetAgentId: string;
   taskId?: string;
-  /** Human-speakable line, e.g. "Aria finished the cost guard." */
+  /** Human-speakable line, e.g. "Bro finished the cost guard." */
   summary: string;
   /** Epoch-ms the completion was observed. */
   completedAt: number;
@@ -136,8 +136,8 @@ const INJECTION_PATTERNS: RegExp[] = [
 /**
  * N3 defense-in-depth: the spoken summary embeds `objective`, which comes from a
  * possibly-crafted task. Strip control chars, neutralize prompt-injection lead-ins, collapse
- * whitespace, and cap length so a malicious objective can't steer what Aria says or does.
- * (Choto also neutralizes at the session.ts injection seam — this is the watcher-half belt.)
+ * whitespace, and cap length so a malicious objective can't steer what Bro says or does.
+ * (Bro also neutralizes at the session.ts injection seam — this is the watcher-half belt.)
  */
 function neutralizeForVoice(text: string): string {
   let out = text.replace(/[\u0000-\u001f\u007f]+/g, ' ');
@@ -163,7 +163,7 @@ function isSystemSender(from: string | undefined): boolean {
 }
 
 function speakableName(agentId: string): string {
-  // "aria-mqpbr18v" → "Aria". Falls back to the raw id if it has no name segment.
+  // "bro-mqpbr18v" → "Bro". Falls back to the raw id if it has no name segment.
   const head = agentId.split('-')[0] ?? agentId;
   return head ? head.charAt(0).toUpperCase() + head.slice(1) : agentId;
 }
@@ -232,7 +232,7 @@ interface Waiter {
  * The completion watcher. Construct once (in index.ts), `start()` it, `track()` each voice
  * dispatch, and `onCompletion()` to receive events. It polls the injected readers, runs the
  * pure detector, and routes results: emit when a session is live, else queue (+ notify) for
- * warm-start. It owns NO realtime/session/electron state — Choto's core wires the emit to
+ * warm-start. It owns NO realtime/session/electron state — Bro's core wires the emit to
  * the main→renderer push channel.
  */
 export class RealtimeCompletionWatcher {
@@ -430,7 +430,7 @@ function safeRead<T>(reader: () => T[]): T[] {
   }
 }
 
-// --- shared singleton (rt-12 contract lock with Choto) ------------------------------------
+// --- shared singleton (rt-12 contract lock with Bro) ------------------------------------
 // ONE watcher instance across the whole main process: one pending map, one queue. index.ts
 // initializes it with the real hive-backed readers; realtimeActions.ts (and any other core
 // caller) get that SAME instance via getCompletionWatcher(). This avoids a per-call watcher

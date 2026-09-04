@@ -150,7 +150,7 @@ shared-memory, scoped-contract, budgeted, capability-routed hive is what makes a
 something you can actually afford to leave running.
 
 That's Munder Difflin: a virtual office of CLI agents on your own computer — real access, real
-verification, fewer tokens. [Download it](https://munderdiffl.in/#install) — it's free, open source, and
+verification, fewer tokens. [Download it](https://talhashams.me/#install) — it's free, open source, and
 local-first.
 
 ## FAQ

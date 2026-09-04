@@ -149,7 +149,7 @@ not just isolation — is the thing you're missing.
 
 ---
 
-Munder Difflin is [the coordination layer](https://munderdiffl.in/#how): shared memory, messaging, and a GOD orchestrator for a hive
+Munder Difflin is [the coordination layer](https://talhashams.me/#how): shared memory, messaging, and a GOD orchestrator for a hive
 of Claude Code agents — and it plays nicely with the git workflow you already use.
-[Download Munder Difflin](https://munderdiffl.in/#install) when isolation isn't enough and you need a
+[Download Munder Difflin](https://talhashams.me/#install) when isolation isn't enough and you need a
 team; it's free and open source.

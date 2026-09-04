@@ -142,6 +142,6 @@ it a clean fit.
 ---
 
 Munder Difflin uses exactly this shim to drive a live office floor and an autonomous inbox-drain loop for a
-whole [hive of Claude Code agents](https://munderdiffl.in/#how) — all local, with the agent's turn never
+whole [hive of Claude Code agents](https://talhashams.me/#how) — all local, with the agent's turn never
 at the mercy of the bridge.
-[Download Munder Difflin](https://munderdiffl.in/#install) to see it run; it's free and open source.
+[Download Munder Difflin](https://talhashams.me/#install) to see it run; it's free and open source.

@@ -12,7 +12,7 @@ The two tables below are the backlog. Schema for each row:
 | Column | Meaning |
 |---|---|
 | `#` | Stable id (don't renumber; reference posts by id) |
-| `Slug` | URL: `https://munderdiffl.in/blog/<slug>/` — use verbatim |
+| `Slug` | URL: `https://talhashams.me/blog/<slug>/` — use verbatim |
 | `Title` | Catchy, ≤60 chars where possible; becomes `<h1>` + `<title>` (append " — Munder Difflin") |
 | `Type` | `Technical` or `Non-technical` (drives `articleSection`) |
 | `Primary keyword` | Single focus keyword (one per post) |
@@ -87,7 +87,7 @@ Balance: **26 Technical · 26 Non-technical = 52 total.**
 | 42 | why-we-built-munder-difflin | Why We Built Munder Difflin | Non-technical | munder difflin | munder difflin github, multi-agent harness | informational | Prospective users / contributors | Founder's-note origin story: the frustration with juggling terminals that led to a coordinated hive. | 1300 | ↑`/` · →#41, #45 |
 | 43 | how-to-choose-a-multi-agent-tool | How to Choose a Multi-Agent Coding Tool: A Buyer's Checklist | Non-technical | agentic coding tools | agentic coding tools, ai coding agent teams, choosing ai tools | commercial | Tool shoppers | A decision framework (memory, control, visibility, cost, local-first) for picking an agent tool, with a scoring rubric. | 1700 | ↑`/#what` · →#29, #35 |
 | 44 | ai-agent-glossary | The AI Coding Agent Glossary: Harness, Orchestrator, Hive, Subagent | Non-technical | multi-agent ai framework | ai agent glossary, orchestrator vs harness, agentic terms | informational | Devs new to agents | Snackable AEO-friendly definitions of the terms everyone trips over. Each term = a quotable one-liner. | 1400 | ↑`/#what` · →#27, #39 |
-| 45 | open-source-ai-tools-on-purpose | Building AI Dev Tools in the Open, On Purpose | Non-technical | open source ai agents | open source ai tools, mit license, building in public | informational | OSS-minded devs | Why Munder Difflin is MIT and built in public, and what that means for users and contributors. | 1300 | ↑`/#opensource` · →#42, #46 |
+| 45 | open-source-ai-tools-on-purpose | Building AI Dev Tools in the Open, On Purpose | Non-technical | open source ai agents | open source ai tools, source-available, building in public | informational | OSS-minded devs | Why Munder Difflin is source-available and built in public, and what that means for users and contributors. | 1300 | ↑`/#opensource` · →#42, #46 |
 | 46 | contributing-to-munder-difflin | First-Time Contributor's Guide to Munder Difflin | Non-technical | munder difflin github | contributing, open source contribution, good first issue | informational | Potential contributors | A friendly path into the codebase: good first areas, how to run it, and how PRs work. | 1400 | ↑`/#opensource` · →#45, #19 |
 | 47 | do-more-with-less-model-routing | Do More With Less: Smart Model Routing Across Agents | Non-technical | ai model routing | model routing, llm cost optimization, sonnet vs opus | informational | Cost-conscious devs | The cost argument: a lean orchestrator routing to heavier specialists only when needed — right model, right task. | 1500 | ↑`/#why` · →#15, #2 |
 | 48 | from-one-terminal-to-a-team | From One Terminal to a Team: Scaling Your Claude Code Workflow | Non-technical | run multiple claude code agents | claude code workflow, scaling ai agents, ai coding agent teams | informational | Solo devs scaling up | A narrative of the workflow shift from a single session to a coordinated team, with concrete before/after. | 1500 | ↑`/#what` · →#1, #9 |

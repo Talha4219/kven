@@ -6,7 +6,7 @@ category: concepts
 categoryLabel: Concepts
 type: Non-technical
 primaryKeyword: "open source ai agents"
-secondaryKeywords: ["open source ai tools", "mit license", "building in public", "local-first ai"]
+secondaryKeywords: ["open source ai tools", "source-available", "building in public", "local-first ai"]
 tags: ["Open Source", "Local-First", "Trust", "Multi-Agent"]
 author:
   name: Chaitanya Giri
@@ -14,8 +14,8 @@ author:
 faq:
   - q: "Why does it matter whether an AI agent tool is open source?"
     a: "Because agents act autonomously on your behalf — they read your code, call tools with your keys, and keep memory of your work. A closed, autonomous tool asks you to trust all of that on faith. An open one lets you read exactly what it does, audit it, and fix or fork it if you disagree. For software that operates this independently, inspectability isn't a nice-to-have; it's the basis of trust."
-  - q: "What does MIT-licensed actually give me as a user?"
-    a: "The MIT license is permissive: you can read the full source, run it for any purpose, modify it, and fork it, with essentially no strings beyond keeping the copyright notice. Practically that means no lock-in — if the project changed direction or disappeared, your copy keeps working and you can carry it forward yourself."
+  - q: "What does source-available actually give me as a user?"
+    a: "Being source-available means the code is published and readable, with all rights reserved — you can read it and fork/run it for non-commercial purposes, but the copyright holder keeps full ownership. Practically that means no lock-in — if the project changed direction or disappeared, your copy keeps working and you can carry it forward yourself."
   - q: "Isn't open source just a marketing label these days?"
     a: "It can be, when 'open' means a crippled core with the useful parts behind a cloud subscription. The honest version is open source plus local-first: the whole thing runs on your machine, your data and memory stay local, and the code that orchestrates your agents is the code you can read. That combination is what makes 'open' mean something for a dev tool."
 ---
@@ -23,15 +23,15 @@ faq:
 <div class="callout tldr"><span class="ic">TL;DR</span><p>AI agents read your code, call tools with your
 keys, and remember your work — so an agent tool asks for an unusual amount of trust. The answer isn't to
 trust harder; it's to make the tool <strong>inspectable</strong>. Munder Difflin is
-<strong>MIT-licensed and local-first on purpose</strong>: the orchestrator, the agents, and their memory
+<strong>source-available and local-first on purpose</strong>: the orchestrator, the agents, and their memory
 all run on your machine, and the code that drives them is code you can read, audit, and fork. For
 software this autonomous, open source isn't ideology — it's how you replace blind trust with
 verification.</p></div>
 
 There's a lot of AI agent tooling being built right now, and a striking amount of it is closed: a cloud
 service you send your code to, a black box that acts on your repo, a "core" that's open while the parts
-that matter sit behind a subscription. [Munder Difflin](https://munderdiffl.in/#opensource) went the
-other way — MIT-licensed, source-available, local-first — and not as an afterthought. It's a deliberate
+that matter sit behind a subscription. [Munder Difflin](https://talhashams.me/#opensource) went the
+other way — source-available, local-first — and not as an afterthought. It's a deliberate
 choice about what a tool like this *should* be. Here's the case for building agent tooling in the open,
 on purpose.
 
@@ -53,12 +53,12 @@ Open source is what makes that possible. It turns "trust us" into "check for you
 
 ## What "open, on purpose" actually buys you
 
-Being [MIT-licensed](https://munderdiffl.in/#opensource) and built in the open isn't a badge; it changes
+Being [source-available](https://talhashams.me/#opensource) and built in the open isn't a badge; it changes
 what you can do as a user:
 
 - **Auditability.** You can read exactly how work gets routed, what an agent is allowed to touch, and
   where your data goes. No guessing about a remote service's behavior.
-- **No lock-in.** Permissive licensing means your copy keeps working regardless of what happens to the
+- **No lock-in.** Source-available code means your copy keeps working regardless of what happens to the
   project. You're never one pricing change or shutdown away from losing your workflow.
 - **Forkability.** Disagree with a decision? Change it. Need a behavior the maintainers won't add? Fork
   it. The tool bends to your needs instead of the reverse.
@@ -108,10 +108,7 @@ behalf — reading your code, calling tools with your keys, holding memory of yo
 you to trust all of that on faith; an open one lets you read what it does, audit it, and fork it if you
 disagree. For software this independent, inspectability is the basis of trust.
 
-**What does MIT-licensed actually give me?** It's permissive: read the source, run it for any purpose,
-modify it, fork it — essentially no strings beyond keeping the copyright notice. In practice that means
-no lock-in. If the project changed course or vanished, your copy keeps working and you can carry it
-forward.
+**What does source-available actually give me?** Being source-available means the code is published and readable, with all rights reserved — you can read it and fork/run it for non-commercial purposes, but the copyright holder keeps full ownership. In practice that means no lock-in. If the project changed course or vanished, your copy keeps working and you can carry it forward.
 
 **Isn't "open source" just a label sometimes?** It can be, when "open" means a hollow core with the
 useful parts behind a cloud subscription. The honest version is open source *plus* local-first: the whole
@@ -121,7 +118,7 @@ thing runs on your machine, your data stays local, and the orchestration code is
 
 The more an agent can do on your behalf, the more it matters that you can see what it's doing. Open
 source plus local-first is how a tool earns that trust — not by asking for it, but by making itself
-checkable. Munder Difflin is MIT and built in the open [on
-purpose](https://munderdiffl.in/#opensource), because that's the only honest way to ship software this
-autonomous. [Download Munder Difflin](https://munderdiffl.in/#install) and read every line you're running
-— it's free and open source.
+checkable. Munder Difflin is source-available and built in the open [on
+purpose](https://talhashams.me/#opensource), because that's the only honest way to ship software this
+autonomous. [Download Munder Difflin](https://talhashams.me/#install) and read every line you're running
+— it's free and source-available.

@@ -19,7 +19,7 @@ faq:
   - q: "Can you use Cline and Munder Difflin together?"
     a: "Conceptually yes — they solve different layers. Cline is your in-editor agent; Munder Difflin orchestrates a hive of Claude Code agents with shared memory and messaging. They're complementary, not mutually exclusive."
   - q: "Are both local-first and open?"
-    a: "Both lean local and BYO-model. Cline is a free, open VS Code extension that runs on your keys or local models; Munder Difflin is an MIT-licensed local harness where orchestration, files, and memory stay on your machine."
+    a: "Both lean local and BYO-model. Cline is a free, open VS Code extension that runs on your keys or local models; Munder Difflin is a source-available local harness where orchestration, files, and memory stay on your machine."
 ---
 
 <div class="callout tldr"><span class="ic">TL;DR</span><p><strong>Cline</strong> is an excellent
@@ -48,7 +48,7 @@ It's widely described as a Cursor-equivalent experience *inside* VS Code with br
 that wraps the Claude Code agents you already run and coordinates them into a team. The orchestration,
 the files, and the [memory](/blog/semantic-memory-for-ai-agents/) all run on your machine; a GOD
 orchestrator routes work, agents message each other through files, and you watch the whole thing on a
-visual office floor. It's MIT-licensed and [local-first by design](/blog/why-local-first-matters-for-ai-agents/).
+visual office floor. It's source-available and [local-first by design](/blog/why-local-first-matters-for-ai-agents/).
 
 The one-line distinction: **Cline is an agent you code *with*; Munder Difflin is the layer that runs a
 *team* of agents.**
@@ -61,7 +61,7 @@ It's worth being clear about what they share, because it's real:
   contrast with the cloud SDK wave, see [local-first vs cloud agent SDKs](/blog/local-first-vs-cloud-agent-sdks/).)
 - **Bring-your-own-model.** Cline runs on your keys or local Ollama models; Munder Difflin's agents are
   your own Claude Code sessions calling the API you already use.
-- **Open and free.** Cline is a free open extension; Munder Difflin is MIT-licensed and free.
+- **Open and free.** Cline is a free open extension; Munder Difflin is source-available and free.
 
 So if your priority is "keep it on my machine, on my models," both qualify. The decision is about
 *scope*.
@@ -115,8 +115,7 @@ using both.
 
 ---
 
-Munder Difflin is a [local, open-source multi-agent harness](/#what) for Claude Code — a hive you run
-on your own machine. [Download Munder Difflin](/#install) to coordinate a team of agents; free and MIT
-licensed.
+Munder Difflin is a [local, source-available multi-agent harness](/#what) for Claude Code — a hive you run
+on your own machine. [Download Munder Difflin](/#install) to coordinate a team of agents; free and source-available.
 
 <p style="font-size:0.85em;opacity:0.7;margin-top:2rem">Sources: <a href="https://www.morphllm.com/best-ai-coding-agents-2026">Morph — Best AI Coding Agents 2026 (Cline capabilities/pricing)</a>; <a href="https://www.developersdigest.tech/blog/ai-coding-tools-pricing-2026">Developers Digest — AI Coding Tools Pricing 2026</a>. Cline features/pricing change frequently — verify current details on Cline's site.</p>

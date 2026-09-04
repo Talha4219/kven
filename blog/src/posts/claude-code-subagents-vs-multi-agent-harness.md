@@ -65,7 +65,7 @@ were never meant to be a standing team.
 
 ## What a harness adds
 
-A [multi-agent harness](https://munderdiffl.in/#what) wraps agents you already run — full Claude Code
+A [multi-agent harness](https://talhashams.me/#what) wraps agents you already run — full Claude Code
 sessions — and adds the layer subagents structurally can't provide:
 
 - **Persistent identities.** Each agent has a role, a name, and its own workspace that lives across
@@ -142,5 +142,5 @@ doesn't take anything away.
 
 Munder Difflin is the harness layer: persistent agents, shared memory, direct messaging, and a GOD
 orchestrator — wrapped around the Claude Code sessions (and subagents) you already use.
-[Download Munder Difflin](https://munderdiffl.in/#install) to turn helpers into a team; it's free and
+[Download Munder Difflin](https://talhashams.me/#install) to turn helpers into a team; it's free and
 open source.
